@@ -1,24 +1,48 @@
-# README
+# Band House
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## サイト概要
+フォロー・フォロワー機能、コメント機能やいいね機能などを実装することで音楽専用のSNSとします。
+バンドや曲作りを行っている方が無償で自分たちの作成した曲をアップロードし、
+その音楽を気に入った方々がそのバンドや音楽を好きになる、もしくは
+今の音楽シーンについてや「この曲にはこういった展開の方が盛り上がりそう！」など曲への意見交換を出来るような
+ポップなサイトにしたいと考えております。
+また、微力ではありますがコロナウイルスの影響で音楽離れにならないよう以前までの活気のある音楽業界に近づけることを目標とします。
 
-Things you may want to cover:
+### サイトテーマ
+「いつでもどこでも音楽を聴ける、話せるSNS」もテーマに
+バンド活動や曲作りを行っている人たちまたは音楽を聴くことが好きな人たちが
+自分の作った曲を持ち寄い、評価や曲や音楽シーンへの意見交換をする場とします。
 
-* Ruby version
+### テーマを選んだ理由
+現状、コロナウイルス蔓延防止の措置として
+ライブに行くことやライブ自体をする機会が限られております。
+そのことに伴い、音楽業界全体が前までの収益を得られなくなっております。
+私自身、音楽を聴くことが好きで学生時代にはよくライブハウスへ行ってました。
+その時、行っていたライブハウスもコロナウイルスの影響で閉店しております。
+若い人たちが作っている音楽を少しでも知ってもらい、
+コロナ収束後にはライブを実際に見に行っていただけるようなサイトを作りたいと考えるようになりました。
+バンドマンだけでなく音楽を聴くことが好きな人たちなどが自分の作ったアプリ内で交流をし、
+以前までの活気のあるライブ活動の助力になればと思いテーマを選びました。
 
-* System dependencies
+### ターゲットユーザ
+・バンド活動を行っている方々、自分で曲作りをしている方
+・音楽を聴くことが好きな人
+・音楽を聞くことに興味がある人
 
-* Configuration
+### 主な利用シーン
+今まで聞いたことのないバンドのサウンドを聞いてみたい時や聞きたい曲がある時。
+また、投稿者が作成した曲を評価してもらいたい時に使っていただきたいと思います。
 
-* Database creation
+## 設計書
 
-* Database initialization
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+## チャレンジ要素一覧
+<https://docs.google.com/spreadsheets/d/1czqNAT8Zj1NLraWrOwuD0_43N7J-DQ8GIselDLCxtIg/edit#gid=0>
 
-* Deployment instructions
-
-* ...
+## 開発環境
+- OS：Linux(CentOS)
+- 言語：HTML,CSS,JavaScript,Ruby,SQL
+- フレームワーク：Ruby on Rails
+- JSライブラリ：jQuery
+- IDE：Cloud9
