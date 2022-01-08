@@ -37,7 +37,8 @@
 
 ## 設計書
 
-<追加予定>
+- [ER図](https://app.diagrams.net/#G1N4-f5lQbiwx0deevRoa18BIbjuhzljMz)
+- [テーブル定義書](https://docs.google.com/spreadsheets/d/1HS6JiEcjjlZgZOBhdSv3mOzZAjeh_-kveDi764L293M/edit?usp=sharing)
 
 ## チャレンジ要素一覧
 <https://docs.google.com/spreadsheets/d/1czqNAT8Zj1NLraWrOwuD0_43N7J-DQ8GIselDLCxtIg/edit#gid=0>
