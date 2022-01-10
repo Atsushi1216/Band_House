@@ -8,5 +8,6 @@
   <%= f.attachment_field :song_image %>
   <h4>曲の選択</h4>
   <%= f.file_field :song , :size => 140 %></br>
+  <h6>※投稿できる音声ファイルは「.mp3」もしくは[.wav」のどちらかとなります。</h6>
   <%= f.submit '投稿' %>
 <% end %>
