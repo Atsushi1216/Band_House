@@ -1,0 +1,12 @@
+<div>
+  <%= attachment_image_tag @music, :song_image %>
+ <p>タイトル：<%= @music.title %></p>
+  <p>説明：<%= @music.caption %></p>
+  <p>ユーザーネーム：<%= @music.user.name %></p>
+  <p>再生：<audio src= "<%= "#{@music.song}" %>" controls=""></audio></p>
+  <p>投稿日：<%= @music.created_at.strftime('%Y/%m/%d') %></p>
+  <% if @music.user == current_user %>
+    <%= link_to "編集", edit_music_path(@music.id) %>
+    <%= link_to "削除", music_path(@music), method: :delete %>
+  <% end %>
+</div>

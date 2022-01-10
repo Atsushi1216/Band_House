@@ -1,0 +1,12 @@
+<h1>音楽投稿用フォーム</h1>
+<%= form_with model: @music, local:true do |f| %>
+  <h4>曲名</h4>
+   <%= f.text_field :title %>
+  <h4>説明</h4>
+  <%= f.text_field :caption %>
+  <h4>ジャケット写真</h4>
+  <%= f.attachment_field :song_image %>
+  <h4>曲の選択</h4>
+  <%= f.file_field :song , :size => 140 %></br>
+  <%= f.submit '投稿' %>
+<% end %>
