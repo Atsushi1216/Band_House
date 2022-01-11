@@ -5,5 +5,7 @@ Rails.application.routes.draw do
 
  resources :users
 
- resources :musics
+ resources :musics do
+  resources :comments, only: [:create, :destroy]
+ end
 end

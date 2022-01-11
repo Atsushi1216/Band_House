@@ -4,7 +4,7 @@ class MusicsController < ApplicationController
   def show
     #@music_new = Music.new
     #@user = @music.user
-    #@post_comment = PostComment.new
+    @comment = Comment.new
   end
 
   def index
