@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_11_074049) do
+ActiveRecord::Schema.define(version: 2022_01_11_083102) do
 
   create_table "comments", force: :cascade do |t|
     t.text "content"
@@ -33,6 +33,13 @@ ActiveRecord::Schema.define(version: 2022_01_11_074049) do
     t.string "song_image_id"
     t.string "song"
     t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "relationships", force: :cascade do |t|
+    t.integer "follower_id", null: false
+    t.integer "followed_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
