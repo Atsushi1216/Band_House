@@ -9,6 +9,19 @@
     <%= link_to "編集", edit_music_path(@music.id) %>
     <%= link_to "削除", music_path(@music), method: :delete %>
   <% end %>
+  <% if @music.favorited_by?(current_user) %>
+    <p>
+      <%= link_to music_favorites_path(@music), method: :delete do %>
+        ♥<%= @music.favorites.count %> いいね
+      <% end %>
+    </p>
+    <% else %>
+    <p>
+      <%= link_to music_favorites_path(@music), method: :post do %>
+        ♡<%= @music.favorites.count %> いいね
+      <% end %>
+    </p>
+  <% end %>
 </div>
 
 <div>
