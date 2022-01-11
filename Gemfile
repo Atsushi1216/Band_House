@@ -72,3 +72,4 @@ end
 
 gem 'carrierwave'
 gem 'audiojs-rails'
+gem 'kaminari','~> 1.2.1'
