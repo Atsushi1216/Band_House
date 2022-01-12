@@ -54,6 +54,16 @@
     <h4>音源</h4>
     <audio src= "<%= "#{music.song}" %>" controls=""></audio></p>
   </div>
+  <div class="music-evaluation_<%= music.id %>" data-score="<%= music.evaluation %>"></div>
+   <script>
+      $('.music-evaluation_<%= music.id %>').raty({
+        readOnly: true,
+        score: function() {
+        return $(this).attr('data-score');
+      },
+        path: '/assets/'
+      });
+  </script>
 <hr>
 <% end %>
 <% end %>

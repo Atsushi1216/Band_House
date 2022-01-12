@@ -5,6 +5,16 @@
   <p>ユーザーネーム：<%= @music.user.name %></p>
   <p>再生：<audio src= "<%= "#{@music.song}" %>" controls=""></audio></p>
   <p>投稿日：<%= @music.created_at.strftime('%Y/%m/%d') %></p>
+  <div class="music-evaluation" data-score="<%= @music.evaluation %>"></div>
+   <script>
+      $('.music-evaluation').raty({
+        readOnly: true,
+        score: function() {
+        return $(this).attr('data-score');
+      },
+        path: '/assets/'
+      });
+  </script>
   <% if @music.user == current_user %>
     <%= link_to "編集", edit_music_path(@music.id) %>
     <%= link_to "削除", music_path(@music), method: :delete %>
