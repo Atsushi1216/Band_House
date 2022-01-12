@@ -9,5 +9,24 @@
   <h4>曲の選択</h4>
   <%= f.file_field :song , :size => 140 %></br>
   <h6>※投稿できる音声ファイルは「.mp3」もしくは「.wav」ファイルのどちらかとなります。</h6>
-  <%= f.submit '投稿' %>
+  <!-- 評価 -->
+  <div class="form-group row" id="star">
+    <%= f.label :evaluation,'評価 ', class:'col-md-3 col-form-label' %>
+    <%= f.hidden_field :evaluation, id: :review_star %>
+  </div>
+  <!-- 評価javascript -->
+  <script>
+  $('#star').raty({
+    size     : 36,
+    starOff:  '<%= asset_path('star-off.png') %>',
+    starOn : '<%= asset_path('star-on.png') %>',
+    starHalf: '<%= asset_path('star-half.png') %>',
+    scoreName: 'music[evaluation]',
+    half: true,
+  });
+  </script>
+</div>
+
+  <%= f.submit "　Vote Music !　", class: "btn btn-success" %>
+
 <% end %>
