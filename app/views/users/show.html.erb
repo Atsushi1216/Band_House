@@ -34,12 +34,17 @@
 <% end %>
 
 
+<% if @user == current_user %>
+
 <h3>最新投稿</h3>
 <hr>
 <% @feeds.each do |music| %>
-
   <div>
     <%= link_to music.user.name %>さん
+  </div>
+  <div>
+    <h4>曲名<br></h4>
+    <%= music.title %>
   </div>
   <div>
     <h4>曲について<br></h4>
@@ -50,4 +55,5 @@
     <audio src= "<%= "#{music.song}" %>" controls=""></audio></p>
   </div>
 <hr>
+<% end %>
 <% end %>
