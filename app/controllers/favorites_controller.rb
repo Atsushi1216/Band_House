@@ -12,5 +12,4 @@ class FavoritesController < ApplicationController
     favorite = current_user.favorites.find_by(music_id: @music.id)
     favorite.destroy
   end
-
 end
