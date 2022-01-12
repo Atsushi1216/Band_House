@@ -6,7 +6,6 @@ Rails.application.routes.draw do
 
  resources :musics do
   resource :favorites, only: [:create, :destroy]
-
   resources :comments, only: [:create, :destroy]
  end
 

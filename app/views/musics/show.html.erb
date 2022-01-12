@@ -19,9 +19,9 @@
     <%= link_to "編集", edit_music_path(@music.id) %>
     <%= link_to "削除", music_path(@music), method: :delete %>
   <% end %>
-  <p class=<%="favorite-btn-"+ (@music.id).to_s %>>
-    <%= render 'favorites/favorite-btn', music: @music %>
-  <p>
+  <div id="favorite_buttons_<%= @music.id %>">
+　　<%= render "favorites/favorite", music: @music %>
+　</div>
   <!--<%# if @music.favorited_by?(current_user) %>-->
   <!--  <p>-->
   <!--    <%#= link_to music_favorites_path(@music), method: :delete, remote: true do %>-->
