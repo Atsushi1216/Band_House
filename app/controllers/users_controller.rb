@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   def show
      @user = User.find(params[:id])
      @musics = @user.musics.page(params[:page]).reverse_order
+     @feeds = Music.where(user_id: [current_user.id, *current_user.follower_ids]).order(created_at: :desc)
   end
 
   def edit
