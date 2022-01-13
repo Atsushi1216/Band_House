@@ -10,6 +10,7 @@ class MusicsController < ApplicationController
   def index
     @musics = Music.page(params[:page]).reverse_order
     @user = current_user
+    @all_ranks = Music.find(Favorite.group(:music_id).order('count(music_id) desc').limit(3).pluck(:music_id))
   end
 
   def new

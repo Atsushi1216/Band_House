@@ -13,6 +13,18 @@
   </thead>
 <tbody>
 
+<div>
+  <h3>いいね数ランキング</h3>
+<% @all_ranks.each.with_index(1) do |music, i| %>
+ 第<%= i %>位
+ <%= link_to music.title,  music_path(music.id) %>
+ <%= music.favorites.count %>いいね<br>
+ <br>
+ <% end %>
+</div>
+
+<hr>
+
 <% @musics.each do |music| %>
 <%# binding.pry %>
   <tr>
