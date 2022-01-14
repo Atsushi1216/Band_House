@@ -75,3 +75,4 @@ gem 'audiojs-rails'
 gem 'kaminari','~> 1.2.1'
 gem 'bootstrap', '~> 4.5'
 gem 'jquery-rails'
+gem "dotenv-rails"

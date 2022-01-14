@@ -10,12 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_12_112155) do
+ActiveRecord::Schema.define(version: 2022_01_14_101403) do
 
   create_table "comments", force: :cascade do |t|
     t.text "content"
     t.integer "user_id"
     t.integer "music_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "contacts", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "email", null: false
+    t.integer "subject", default: 0, null: false
+    t.text "message", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
