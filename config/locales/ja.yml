@@ -1,0 +1,8 @@
+ja:
+  enums:
+    contact: # モデル名
+      subject: # カラム名
+        other: 'その他のお問い合わせ'
+        work: '仕事について'
+        recruit: '採用について'
+        method: '方法について'

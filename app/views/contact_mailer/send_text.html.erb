@@ -1,5 +1,4 @@
 <%= @contact.name %> 様 から問い合わせがありました。<br>
-【Mail】：<%= @contact.email %><br>
-【用件】：<%= @contact.subject_i18n %><br>
-【お問い合わせ内容】<br>
-<span style="white-space: pre-wrap;"><%= @contact.message %></span>
+<p>【email】: <%= @contact.email %></p>
+
+<p>【お問い合わせ内容】: <%= @contact.message %></p>
