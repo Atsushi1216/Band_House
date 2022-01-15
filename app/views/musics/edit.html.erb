@@ -1,13 +1,21 @@
 <h1>Misic Editページ</h1>
   <%= form_with model: @music, local:true do |f| %>
-    <h4>曲名</h4>
+    <div>
+      <%= f.label :title, '曲名' %>
       <%= f.text_field :title, class:"form-control" %>
-    <h4>説明</h4>
+    </div>
+    <div>
+      <%= f.label :caption, '説明' %>
       <%= f.text_field :caption, class:"form-control" %>
-    <h4>ジャケット写真</h4>
+    </div>
+    <div>
+      <%= f.label :song_image, 'ジャケ写' %>
       <%= f.attachment_field :song_image, class:"form-control"  %>
-    <h4>曲の選択</h4>
+    </div>
+    <div>
+      <%= f.label :song, '曲の選択' %>
       <%= f.file_field :song , :size => 140, class:"form-control"  %></br>
+    </div>
     <%= f.submit "曲を更新する", class: "btn btn-success" %>
   <% end %>
   <%= link_to "曲詳細に戻る", music_path(@music.id) %><span> |</span>
