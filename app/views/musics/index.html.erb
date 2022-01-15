@@ -39,16 +39,15 @@
             <p class="card-text">曲に対する評価</p>
             <p class="music-evaluation" data-score="<%= music.evaluation %>"><small></small></p>
             <p class="card-text">コメント件数</p>
-             <p class="card-text"><%= link_to music.comments.count, music_path(music.id) %></p>
+            <p class="card-text"><%= link_to music.comments.count, music_path(music.id) %></p>
+            <p class="card-text"> <% if music.user == current_user %>
+              <%= link_to "削除", music_path(music), method: :delete %>
+              <% end %></p>
         </div>
       </div>
     </div>
   </div>
 </div>
-    <div><% if music.user == current_user %>
-      <%= link_to "削除", music_path(music), method: :delete %>
-      <% end %>
-    </div>
   <% end %>
   </tbody>
 </table>
