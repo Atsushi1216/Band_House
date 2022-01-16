@@ -7,6 +7,7 @@
   <p>投稿日：<%= @music.created_at.strftime('%Y/%m/%d') %></p>
   <div class="music-evaluation" data-score="<%= @music.evaluation %>"></div>
    <script>
+      $('.music-evaluation').empty();
       $('.music-evaluation').raty({
         readOnly: true,
         score: function() {
