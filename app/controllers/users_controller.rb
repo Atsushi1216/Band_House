@@ -15,6 +15,12 @@ class UsersController < ApplicationController
     redirect_to user_path(@user.id)
   end
 
+  def music
+    @user = User.find(params["user_id"])
+    @musics = @user.musics.page(params[:page]).reverse_order
+    @feeds = Music.where(user_id: [current_user.id, *current_user.follower_ids]).order(created_at: :desc)
+  end
+
   private
 
   def user_params
