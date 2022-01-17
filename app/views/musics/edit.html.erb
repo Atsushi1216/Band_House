@@ -1,22 +1,64 @@
-<h1>Misic Editページ</h1>
-  <%= form_with model: @music, local:true do |f| %>
-    <div>
-      <%= f.label :title, '曲名' %>
-      <%= f.text_field :title, class:"form-control" %>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="mainContents col-md-9 col-md-push-3">
+      <h2 class="subtitle">投稿した曲の編集</h2>
+        <div class="container form-contents">
+          <%= form_with model: @music, local:true do |f| %>
+            <div class="field form-group row">
+              <div class="col-md-6 mb-3">
+                <%= f.label :title, '曲名' %>
+                <%= f.text_field :title,autofocus: true, class:"form-control", required: true %>
+              </div>
+            </div>
+            <br>
+            <div class="field form-group row">
+              <div class="col-md-6 mb-3">
+                <%= f.label :caption, '説明' %>
+                <%= f.text_field :caption,autofocus: true, class:"form-control" , required: true%>
+              </div>
+            </div>
+            <br>
+            <div class="field form-group row">
+              <div class="col-md-6 mb-3">
+                <%= f.label :song_image, 'ジャケ写など' %>
+                <%= f.attachment_field :song_image,autofocus: true, class:"form-control" , required: true %><br>
+              </div>
+            </div>
+            <div class="field form-group row">
+              <div class="col-md-6 mb-3">
+                <%= f.label :song, '曲の選択' %>
+                <%= f.file_field :song , :size => 140,autofocus: true,class:"form-control" , required: true %>
+                <p6><strong>※投稿できる音声ファイルは「.mp3」もしくは「.wav」ファイルのどちらかとなります。</strong></p6>
+              </div>
+            </div>
+            <br>
+             <div class="field form-group row">
+              <div class="col-md-6 mb-3">
+                <div id="evaluate_stars">
+                  <%= f.label :evaluation, '自己評価　　' %>
+                </div>
+              </div>
+            </div>
+            <br>
+            <div class="container ">
+              <div class="actions">
+                <%= f.submit "編集内容を保存", class: "btn form-button" %>
+              </div>
+                <% end %>
+            </div>
+          <br>
+          <br>
+          <%= link_to "曲詳細に戻る", music_path(@music.id) %><span> |</span>
+          <%= link_to "曲一覧に戻る", "/musics" %>
+      </div>
     </div>
-    <div>
-      <%= f.label :caption, '説明' %>
-      <%= f.text_field :caption, class:"form-control" %>
-    </div>
-    <div>
-      <%= f.label :song_image, 'ジャケ写' %>
-      <%= f.attachment_field :song_image, class:"form-control"  %>
-    </div>
-    <div>
-      <%= f.label :song, '曲の選択' %>
-      <%= f.file_field :song , :size => 140, class:"form-control"  %></br>
-    </div>
-    <%= f.submit "曲を更新する", class: "btn btn-success" %>
-  <% end %>
-  <%= link_to "曲詳細に戻る", music_path(@music.id) %><span> |</span>
-  <%= link_to "曲一覧に戻る", "/musics" %>
+  </div>
+</div>
+<script>
+       $('#evaluate_stars').raty({
+          starOn: "<%= asset_path('star-on.png') %>",
+          starOff: "<%= asset_path('star-off.png') %>",
+          starHalf: "<%= asset_path('star-half.png') %>",
+          scoreName: 'music[evaluation]'
+        });
+  </script>

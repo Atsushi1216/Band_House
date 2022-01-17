@@ -21,7 +21,7 @@
       });
   </script>
   <% if @music.user == current_user %>
-    <%= link_to "編集", edit_music_path(@music.id) %>
+    <%= link_to "編集", edit_music_path(@music.id) %>｜
     <%= link_to "削除", music_path(@music), method: :delete %>
   <% end %>
   <div id="favorite_buttons_<%= @music.id %>">
