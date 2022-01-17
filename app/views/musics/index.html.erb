@@ -43,7 +43,7 @@
         </div>
           <ul class="list-group list-group-flush">
             <li class="list-group-item">投稿者：<%= link_to music.user.name, user_path(music.user.id) %></li>
-            <li class="list-group-item">音源：<audio src= "<%= "#{music.song}" %>" controls=""></li>
+            <li class="list-group-item">　　<audio src= "<%= "#{music.song}" %>" controls=""></li>
             <li class="list-group-item">曲への自己評価：<p class="music-evaluation" data-score="<%= music.evaluation %>"></p></li>
             <li class="list-group-item">コメント件数：<%= link_to music.comments.count, music_path(music.id) %>　件</li>
           </ul>
