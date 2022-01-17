@@ -1,7 +1,8 @@
 <div>
+    <% if @user == current_user %>
   <h3>ようこそ<%= @user.name %>さん！</h3>
+    <% end %>
   <%= attachment_image_tag @user, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg" %>
-
   <% if @user.id == current_user.id %>
     <p><%= link_to "プロフィール編集", edit_user_path(@user) %></p>
   <% end %>
@@ -45,7 +46,7 @@
 
 <% if @user == current_user %>
 
-<h3>最新投稿</h3>
+<h3>タイムライン</h3>
 <hr>
 <% @feeds.each do |music| %>
   <div>

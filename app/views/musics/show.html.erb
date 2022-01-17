@@ -1,9 +1,13 @@
-<div>
-  <%= attachment_image_tag @music, :song_image %>
- <p>タイトル：<%= @music.title %></p>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+  <%= attachment_image_tag @music, :song_image, :fill, 300, 300 %>
+    </div>
+    <div class="col-md-6">
+  <p>曲名：<%= @music.title %></p>
   <p>説明：<%= @music.caption %></p>
   <p>ユーザーネーム：<%= @music.user.name %></p>
-  <p>再生：<audio src= "<%= "#{@music.song}" %>" controls=""></audio></p>
+  <p><audio src= "<%= "#{@music.song}" %>" controls=""></audio></p>
   <p>投稿日：<%= @music.created_at.strftime('%Y/%m/%d') %></p>
   <div class="music-evaluation" data-score="<%= @music.evaluation %>"></div>
    <script>
@@ -22,26 +26,35 @@
   <% end %>
   <div id="favorite_buttons_<%= @music.id %>">
 　　<%= render "favorites/favorite", music: @music %>
+　　<p>コメント件数：<%= @music.comments.count %></p>
+　　</div>
 　</div>
-
 </div>
 
-<div>
-<p>コメント件数：<%= @music.comments.count %></p>
-<% @music.comments.each do |comment| %>
-  <p><%= attachment_image_tag comment.user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg" %></p>
-  <%= comment.user.name %>
-  <%= comment.created_at.strftime('%Y/%m/%d') %><%= comment.content %>
-  <% if comment.user == current_user %>
-  <div>
-    <%= link_to "削除", music_comment_path(comment.music, comment), method: :delete %>
+<div class="container">
+  <div class="row">
+    <div class="music-show-profile">
+      <% @music.comments.each do |comment| %>
+        <p><%= attachment_image_tag comment.user, :profile_image, :fill, 100, 100, fallback: "no_image.jpg" %></p>
+    </div>
+    <div class="col-md-6">
+        <span>ユーザーネーム：<%= link_to comment.user.name, user_path(comment.user.id) %></span><br>
+        <span>コメント投稿日：<%= comment.created_at.strftime('%Y/%m/%d') %></span><br>
+        <span class="comment"><%= comment.content %><br>
+        <% if comment.user == current_user %></span>
+        <div>
+          <%= link_to "削除", music_comment_path(comment.music, comment), method: :delete %>
+        </div>
+        <% end %>
+      <% end %>
+    </div>
   </div>
-  <% end %>
-<% end %>
 </div>
-<div>
+</div>
+
+<div class="comment-form">
 <%= form_with(model:[@music, @comment], local: true) do |f| %>
-  <%= f.text_area :content, rows:'5',placeholder: "コメントをここに" %>
-  <%= f.submit "送信する" %>
+  <%= f.text_area :content,size: "45x3",placeholder: "コメントをここに" %><br>
+  <%= f.submit "送信する", class: "btn btn-outline-primary" %>
 <% end %>
 </div>
