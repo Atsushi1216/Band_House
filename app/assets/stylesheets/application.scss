@@ -14,3 +14,59 @@
  *= require_self
  */
 @import "bootstrap";
+
+
+// top
+.main-visual {
+  background-image: image-url('gahag-0071430289-1.jpg');
+  width: 100%;
+  height: 500px;
+  background-size: cover;
+}
+
+.top-text {
+  color: #fff;
+  background-color: rgba( 0, 0, 0, 0.5);
+}
+
+// header
+.navbar {
+  margin-bottom: 40px;
+}
+
+.navbar-text {
+  margin-right: 10px;
+}
+
+.nav-link {
+  font-weight: 400;
+  font-size: 18px;
+}
+
+.navbar-toggler {
+  background-color: #224b37;
+}
+
+//footer
+footer  {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  justify-content: center;
+  background-color: #ffffff;
+}
+
+.footer-logo {
+    display:flex;
+    justify-content: center;
+}
+
+.site-info {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 8px;
+}
+
+//music index
+.jacket {
+  padding-top: 5px;
+}
