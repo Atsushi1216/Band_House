@@ -178,6 +178,15 @@ hr.divider-light {
   --bs-bg-opacity: 1;
 }
 
+.form-button {
+    background-color: #0066CC;
+    color: #fff;
+    border-style: none;
+    padding: 10px 30px;
+    border-radius: 2px;
+    width: 150px;
+}
+
 
 // top
 .main-visual {
@@ -276,11 +285,20 @@ footer  {
    text-align: center;
 }
 
-.user-show{
+.show-name {
    margin-right: 600px;
    margin-left: 650px;
 }
 
+.show-image{
+   margin-right: 200px;
+   margin-left: 300px;
+}
+
 .music-evaluation {
   text-align: center;
+}
+
+.iine {
+   margin-left: 100px;
 }

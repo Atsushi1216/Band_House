@@ -2,22 +2,27 @@
 <%= flash[:notice]  %>
 </div>
 <div class="container mt-5">
-  <div class="row">
-    <div class="col-5 mx-auto">
-      <div >
-        <h2>いいね！数ランキング</h2>
+  <div class="row　mx-auto">
+    <div class="mx-auto col-8">
+      <div class="iine">
+        <h2>楽曲いいね！数ランキング</h2>
         <br>
         <% @all_ranks.each.with_index(1) do |music, i| %>
+
           第<%= i %>位
-          <span class="container col-2 mt-5 mx-auto">
+          <span class="col-2 mt-5 mx-auto">
             <%= link_to music.title,  music_path(music.id) %>
           </span>
-          <span class="containercol-2 mt-5 mx-auto">
+          <span class="col-2 mt-5 mx-auto">
+            <%= link_to @user.name, user_musics_path(:user_id => @user.id) %>さん
+          </span>
+          <span class="col-2 mt-5 mx-auto">
             <%= music.favorites.count %>いいね！
           </span>
           <br>
           <br>
         <% end %>
+        </div>
       </div>
     </div>
   </div>

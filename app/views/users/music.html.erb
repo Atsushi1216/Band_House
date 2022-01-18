@@ -1,41 +1,37 @@
-<% @musics.each do |music| %>
-<%# binding.pry %>
-  <div class="container mt-4">
-    <div class="row">
-      <div class="col-5 mx-auto">
-        <div class="card" style="width: 25rem;">
-          <p> <%= link_to music_path(music.id) do %>
-            <%= attachment_image_tag(music, :song_image, :fill, 398, 150, fallback: "no_image.jpg")  %>
-            <% end %></p>
-            <div class="card-body">
-              <h5 class="card-title">曲名：<%= link_to music.title,  music_path(music.id) %></h5>
-              <p class="card-text"><%= music.caption %></p>
-            </div>
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item">　　<audio src= "<%= "#{music.song}" %>" controls=""></li>
-              <li class="list-group-item">曲への自己評価：<p class="music-evaluation" data-score="<%= music.evaluation %>"></p></li>
-              <li class="list-group-item">コメント件数：<%= link_to music.comments.count, music_path(music.id) %>　件</li>
-            </ul>
-            <div class="card-body">
-              <% if music.user == current_user %>
-              <%= link_to "編集", edit_music_path(music.id) %> |
-              <%= link_to "削除", music_path(music), method: :delete %>
-              <% end %>
-              <p>投稿者のみ表示されます。</p>
-            </div>
-         </div>
+<div class="container" >
+ <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 " >
+    <div class="mainContents col-sm-9 col-sm-push-3 col-md-12 col-md-push-3 " >
+       <h2 class="subtitle pb-4"><%= @user.name %>さんの投稿一覧</h2>
+      <hr>
+      <div class="row" >
+        <% @musics.each do |music| %>
+        <div class="col-md-4 pb-4">
+         <div class="card shadow-sm " style="height: 33rem;" >
+          <%= link_to music_path(music.id) do %>
+            <%= attachment_image_tag(music, :song_image, :fill, 348, 150, fallback: "no_image.jpg")  %>
+            <% end %><br>
+            <p>曲名：<%= link_to music.title,  music_path(music.id) %></p>
+            <p><%= music.caption %></p></br>
+            <p class="mx-auto"><audio src= "<%= "#{music.song}" %>" controls=""></audio></p>
+            <p class="mx-auto">自己評価</p>
+            <p class="text-center">
+            <h5 class="music-evaluation" data-score="<%= music.evaluation %>"></h5></p>
+          </div>
+        </div>
+        <% end %>
       </div>
-     </div>
+    </div>
   </div>
-  <%# binding.pry %>
-<% end %>
- <script>
+  <hr>
+</div>
+
+<script>
   $('.music-evaluation').empty();
   $('.music-evaluation').raty({
-  readOnly: true,
-  score: function() {
-  return $(this).attr('data-score');
+    readOnly: true,
+    score: function() {
+    return $(this).attr('data-score');
   },
-  path: '/assets/'
+    path: '/assets/'
   });
-  </script>
+</script>
