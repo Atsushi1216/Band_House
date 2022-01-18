@@ -7,9 +7,55 @@
         <hr class="divider">
       </div>
         <div class="col-lg-8 align-self-baseline">
-          <p class="text-white-75 mb-5">「いつでも、どこでも聴ける音楽Band House」</p>
+          <p class="text-white mb-5">「いつでも、どこでも聴ける音楽Band House」</p>
             <%= link_to "Band Houseとは", about_path , class: "btn btn-primary btn-xl" %>
         </div>
     </div>
   </div>
 </header>
+
+<section class="page-section" id="services">
+            <div class="container px-4 px-lg-5">
+                <h2 class="text-center mt-0">At Your Service</h2>
+                <hr class="divider">
+                <div class="row gx-4 gx-lg-5">
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="mt-5">
+                            <div class="mb-2"><i class="bi-gem fs-1 text-primary"></i></div>
+                            <h3 class="h4 mb-2">曲を投稿</h3>
+                            <p class="text-muted mb-0">曲を投稿し、いろんな方からアドバイスもらおう！</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="mt-5">
+                            <div class="mb-2"><i class="bi-laptop fs-1 text-primary"></i></div>
+                            <h3 class="h4 mb-2">音楽を聴く</h3>
+                            <p class="text-muted mb-0">好きなミュージシャンが投稿してるかも？　新しいサウンドも聞ける！</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="mt-5">
+                            <div class="mb-2"><i class="bi-globe fs-1 text-primary"></i></div>
+                            <h3 class="h4 mb-2">コメントする</h3>
+                            <p class="text-muted mb-0">好きな曲があったらコメントしよう！</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="mt-5">
+                            <div class="mb-2"><i class="bi-heart fs-1 text-primary"></i></div>
+                            <h3 class="h4 mb-2">音楽の知りあいを増やす</h3>
+                            <p class="text-muted mb-0">音楽好きの知り合いを増やそう！</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="page-section bg-primary text-white">
+          <div class="main-bottom">
+            <div class="container px-4 px-lg-5 text-center">
+                <h2 class="mb-4">早速、音楽を聴いてみよう！</h2>
+                <%= link_to "新規登録をする", new_user_registration_path , class: "btn btn-primary btn-xl" %>
+            </div>
+          </div>
+        </section>
