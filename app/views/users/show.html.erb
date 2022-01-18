@@ -22,28 +22,34 @@
   </div>
 
 <% if @user == current_user %>
-<div class="container">
-  <div class="row">
-    <div class="mx-auto" style="width: 350px;">
-      <h3>タイムライン</h3>
+<div class="container" >
+ <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 " >
+    <div class="mainContents col-sm-9 col-sm-push-3 col-md-12 col-md-push-3 " >
+       <h2 class="subtitle pb-4">タイムライン</h2>
       <hr>
-      <% @feeds.each do |music| %>
-        <div>
-          <%= link_to music.user.name, user_path(music.user.id) %>さん
+      <div class="row" >
+        <% @feeds.each do |music| %>
+        <div class="col-md-4 pb-4">
+         <div class="card shadow-sm " style="height: 33rem;" >
+          <%= link_to music_path(music.id) do %>
+            <%= attachment_image_tag(music, :song_image, :fill, 348, 150, fallback: "no_image.jpg") %>
+          <% end %><br>
+            <p>@<%= link_to music.user.name, user_path(music.user.id) %></p>
+            <p>曲名：<%= music.title %></p>
+            <p>曲について：<%= music.caption %></p></br>
+            <p class="mx-auto"><audio src= "<%= "#{music.song}" %>" controls=""></audio></p>
+            <p class="mx-auto">自己評価</p>
+            <p class="text-center">
+            <h5 class="music-evaluation" data-score="<%= music.evaluation %>"></h5></p>
+          </div>
         </div>
-        <div>
-          <h4>曲名<br></h4>
-          <%= music.title %>
-        </div>
-        <div>
-          <h4>曲について<br></h4>
-          <%= music.caption %>
-        </div>
-        <div>
-          <h4>音源</h4>
-          <audio src= "<%= "#{music.song}" %>" controls=""></audio></p>
-        </div>
-         <div class="music-evaluation" data-score="<%= music.evaluation %>"></div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <hr>
+</div>
+<% end %>
          <script>
             $('.music-evaluation').empty();
             $('.music-evaluation').raty({
@@ -54,12 +60,9 @@
               path: '/assets/'
             });
         </script>
-      <hr>
-<% end %>
-<% end %>
-    </div>
-  </div>
-</div>
+
+
+
 <div class="container col-2 mt-5 mx-auto">
   <span>
     <%= paginate @musics %>
