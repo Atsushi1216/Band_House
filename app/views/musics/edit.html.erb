@@ -1,13 +1,16 @@
-<div class="container">
-  <div class="row justify-content-center">
-    <div class="mainContents col-md-9 col-md-push-3">
+<div class="container edit-form">
+  <div class="row">
+    <div class="mx-auto col-md-9 col-md-push-3">
+      <div class="mx-auto">
       <h2 class="subtitle">投稿した曲の編集</h2>
         <div class="container form-contents">
           <%= form_with model: @music, local:true do |f| %>
             <div class="field form-group row">
-              <div class="col-md-6 mb-3">
-                <%= f.label :title, '曲名' %>
-                <%= f.text_field :title,autofocus: true, class:"form-control", required: true %>
+              <div class="col-md-6 mb-3 edit-form">
+                <div class="edit-form"style="background-color: orange;">
+                  <%= f.label :title, '曲名' %>
+                  <%= f.text_field :title,autofocus: true, class:"form-control", required: true %>
+                </div>
               </div>
             </div>
             <br>
@@ -19,7 +22,7 @@
             </div>
             <br>
             <div class="field form-group row">
-              <div class="">
+              <div class="col-md-6 mb-3">
                 <%= f.label :song_image, 'ジャケ写など' %>
                 <%= f.attachment_field :song_image,autofocus: true, class:"form-control" , required: true %><br>
               </div>
@@ -42,7 +45,7 @@
             <br>
             <div class="container ">
               <div class="actions">
-                <%= f.submit "編集内容を保存", class: "btn form-button" %>
+                <%= f.submit "保存", class: "btn form-button" %>
               </div>
                 <% end %>
             </div>
@@ -50,6 +53,7 @@
           <br>
           <%= link_to "曲詳細に戻る", music_path(@music.id) %><span> |</span>
           <%= link_to "曲一覧に戻る", "/musics" %>
+        </def>
       </div>
     </div>
   </div>

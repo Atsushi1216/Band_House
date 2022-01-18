@@ -1,7 +1,9 @@
 <div class="container">
   <div class="row">
     <div class="col-md-6">
-  <%= attachment_image_tag @music, :song_image, :fill, 300, 300 %>
+      <div class="song-image">
+        <%= attachment_image_tag @music, :song_image, :fill, 300, 300 %>
+      </div>
     </div>
     <div class="col-md-6">
   <p>曲名：<%= @music.title %></p>
