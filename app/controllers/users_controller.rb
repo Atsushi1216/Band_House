@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :set_user, only: [:favorites]
+
   def show
      @user = User.find(params[:id])
      @musics = @user.musics.page(params[:page]).reverse_order
@@ -21,6 +23,11 @@ class UsersController < ApplicationController
     @feeds = Music.where(user_id: [current_user.id, *current_user.follower_ids]).order(created_at: :desc)
   end
 
+  # def favorites
+  #   favorites = Favorite.where(user_id: @user.id).pluck(:music_id)
+  #   @Favorite_musics = Music.find(favorites)
+  # end
+
   private
 
   def user_params
@@ -29,11 +36,17 @@ class UsersController < ApplicationController
 
   def followings
     user = User.find(params[:id])
-    @users = user.followings
+    @users = user.following_user
+
   end
 
   def followers
     user = User.find(params[:id])
-    @users = user.followers
+    @users = user.follower_user
   end
+
+  # def set_user
+  #   @user = User.find(params[user_id: @user.id])
+  # end
+
 end

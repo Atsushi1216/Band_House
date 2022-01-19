@@ -8,12 +8,10 @@ mount_uploader :song, AudiofileUploader
   has_many :favorites, dependent: :destroy
 
   def self.search(search, word)
-    if search == "forward_match"
-      @music = Music.where("title LIKE?","#{word}%")
-    elsif search == "backward_match"
-      @music = Music.where("title LIKE?","%#{word}")
+    if word == ""
+      @music = []
     elsif search == "perfect_match"
-      @music = Music.where("#{word}")
+      @music = Music.where(title: word)
     elsif search == "partial_match"
       @music = Music.where("title LIKE?","%#{word}%")
     else

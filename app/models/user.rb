@@ -7,6 +7,7 @@ class User < ApplicationRecord
   has_many :musics, dependent: :destroy
   has_many :comments, dependent: :destroy
   has_many :favorites, dependent: :destroy
+  has_many :favorite_musics, through: :favorites, source: :music
 
   has_many :relationships, foreign_key: :follower_id
   has_many :followers, through: :relationships, source: :followed
@@ -16,12 +17,10 @@ class User < ApplicationRecord
   attachment :profile_image
 
   def self.search(search,word)
-    if search == "forward_match"
-      @user = User.where("name LIKE?","#{word}%")
-    elsif search == "backward_match"
-      @user = User.where("name LIKE?","%#{word}")
+    if word == ""
+      @user = []
     elsif search == "perfect_match"
-      @user = User.where("#{word}")
+      @user = User.where(name: word)
     elsif search == "partial_match"
       @user = User.where("name LIKE?","%#{word}%")
     else
