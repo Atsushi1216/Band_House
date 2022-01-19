@@ -32,4 +32,8 @@ class User < ApplicationRecord
     reverse_of_relationships.find_by(follower_id: user.id).present?
   end
 
+  validates :name, uniqueness: true
+  validates :name, length: { in: 2..20 }
+  validates :introduction, length: { maximum: 50 }
+
 end

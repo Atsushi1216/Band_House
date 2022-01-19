@@ -7,7 +7,7 @@
     <div class="row">
       <div class="col-lg-6" >
         <div class="show-image">
-          <%= attachment_image_tag @user, :profile_image, :fill, 200, 200, format: 'jpeg', fallback: "no_image.jpg" %>
+          <%= attachment_image_tag @user, :profile_image, :fill, 250, 250, format: 'jpeg', fallback: "no_image.jpg" %>
         </div>
       </div>
       <div class="col-lg-6">
@@ -15,8 +15,8 @@
           <p><%= link_to "プロフィール編集", edit_user_path(@user) %></p>
         <% end %>
         <p>ユーザーネーム：<%= link_to @user.name, user_path(@user.id) %></p>
-        <p><%= @user.introduction %></p>
-        <p><%= link_to "フォロー一覧", followings_user_path(@user) %> / <%= link_to "フォロワー一覧", followers_user_path(@user) %></p>
+        <p>自己紹介<br><%= @user.introduction %></p>
+        <p><%= link_to "フォロー", followings_user_path(@user) %> / <%= link_to "フォロワー", followers_user_path(@user) %></p>
         <% if @user.is_followed_by?(current_user) %>
           <%= link_to user_relationships_path(@user), method: :delete do %>
            フォロー解除
@@ -41,7 +41,7 @@
 <div class="container" >
  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 " >
     <div class="mainContents col-sm-9 col-sm-push-3 col-md-12 col-md-push-3 " >
-       <h2 class="subtitle pb-4">タイムライン（フォローしている人の楽曲）</h2>
+       <h3 class="subtitle pb-4">タイムライン（フォローしている人の楽曲）</h3>
       <hr>
       <div class="row" >
         <% @feeds.each do |music| %>
