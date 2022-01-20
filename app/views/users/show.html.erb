@@ -16,6 +16,11 @@
         <% end %>
         <p>ユーザーネーム：<%= link_to @user.name, user_path(@user.id) %></p>
         <p>自己紹介<br><%= @user.introduction %></p>
+        <br>
+        <h5><%= @user.name %>さんの<%= link_to '楽曲一覧', user_musics_path(:user_id => @user.id) %></h5><br>
+        <%= link_to "いいねした楽曲", user_favorites_path(:user_id => @user.id) %>
+        <br>
+         <br>
         <p><%= link_to "フォロー", follows_user_path(@user) %> / <%= link_to "フォロワー", followers_user_path(@user) %></p>
           <% if current_user != @user %>
             <% if current_user.following?(@user) %>
@@ -24,10 +29,6 @@
             <%= link_to 'フォローする', user_relationships_path(@user.id), method: :POST, class:"btn-sm btn-success" %>
             <% end %>
           <% end %>
-        <br><br>
-        <h5><%= @user.name %>さんの<%= link_to '楽曲一覧', user_musics_path(:user_id => @user.id) %></h5><br>
-        <%= link_to "いいねした楽曲", user_favorites_path(:user_id => @user.id) %>
-
         <br>
         <br>
         <br>
