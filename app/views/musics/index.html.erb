@@ -14,7 +14,7 @@
             <%= link_to music.title,  music_path(music.id) %>
           </span>
           <span class="col-2 mt-5 mx-auto">
-            <%= link_to @user.name, user_path(@user.id) %>さん
+            <%= link_to music.user.name, user_path(music.user.id) %>さん
           </span>
           <span class="col-2 mt-5 mx-auto">
             <%= music.favorites.count %>いいね！

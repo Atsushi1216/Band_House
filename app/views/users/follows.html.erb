@@ -1,7 +1,7 @@
 <div class="cover-user-index">
   <div class="container">
     <div class="row justify-content-center">
-      <h1 class="font-weight-normal mt-5 mb-5">フォロワー一覧</h1>
+      <h1 class="font-weight-normal mt-5 mb-5">フォロー一覧</h1>
     </div>
     <div class="row justify-content-center">
       <% @users.each do |user| %>
@@ -12,7 +12,7 @@
           <%= attachment_image_tag @user, :profile_image, size: '50x50', fallback: "no_image.jpg", class: "mb-3 mt-3 ml-3 profile-img" %>
           <h4 class="ml-5"><%= user.introduction %></h4>
         </div>
-        <p class="caption"><%= "#{user.musics.count} 楽曲" %></p>
+        <p class="caption"><%= "#{user.musics.count} 投稿" %></p>
         <% end %>
       </div>
       <% end %>
