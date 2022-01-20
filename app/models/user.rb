@@ -15,7 +15,6 @@ class User < ApplicationRecord
   has_many :follower_user, through: :followed, source: :follower # 自分をフォローしている人
 
 
-
   attachment :profile_image
 
   def self.search(search,word)

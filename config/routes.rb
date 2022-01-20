@@ -10,10 +10,11 @@ Rails.application.routes.draw do
   resources :comments, only: [:create, :destroy]
  end
 
-  resources :users do
-   collection do
-    get :favorites
+  resources :users, only: [:show] do
+    get 'favorites' => "users#favorites"
   end
+  resources :users do
+  #memberでidを取得する
    member do
       get :follows, :followers
     end

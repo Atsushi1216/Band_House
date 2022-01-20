@@ -26,7 +26,7 @@
           <% end %>
         <br><br>
         <h5><%= @user.name %>さんの<%= link_to '楽曲一覧', user_musics_path(:user_id => @user.id) %></h5><br>
-        <%= link_to "いいねした楽曲", favorites_users_path %>
+        <%= link_to "いいねした楽曲", user_favorites_path(:user_id => @user.id) %>
 
         <br>
         <br>

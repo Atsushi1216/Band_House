@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:favorites]
+  #before_action :set_user, only: [:favorites]
 
   def show
     @user = User.find(params[:id])
@@ -28,8 +28,9 @@ class UsersController < ApplicationController
   end
 
   def favorites
+    @user = User.find(params["user_id"])
     favorites = Favorite.where(user_id: @user.id).pluck(:music_id)
-    @Favorite_musics = Music.find(favorites)
+    @favorite_musics = Music.find(favorites)
   end
 
   def follows
@@ -49,8 +50,9 @@ class UsersController < ApplicationController
     params.require(:user).permit(:name, :profile_image, :introduction)
   end
 
-  def set_user
-    @user = User.find(params[user_id: @user.id])
-  end
+  # def set_user
+  #   @user = User.find(params["user_id"])
+  #   binding.pry
+  # end
 
 end

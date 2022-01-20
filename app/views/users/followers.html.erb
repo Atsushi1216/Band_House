@@ -5,14 +5,15 @@
     </div>
     <div class="row justify-content-center">
       <% @users.each do |user| %>
-      <div class="one-post card w-100">
+      <div class="one-post card w-100 mb-3">
         <%= link_to user_path(user) do %>
         <p class="caption h4"><%= user.name %></p>
         <div class="d-flex">
-          <%= attachment_image_tag @user, :profile_image, size: '50x50', fallback: "no_image.jpg", class: "mb-3 mt-3 ml-3 profile-img" %>
-          <h4 class="ml-5"><%= user.introduction %></h4>
+          <%= attachment_image_tag user, :profile_image, :fill, 70, 70, format: 'jpeg', fallback: "no_image.jpg", class: "mb-3 mt-3 ml-3 profile-img" %>
+          <h6 class="ml-5"><%= user.introduction %></h6>
+          <br>
+          <br>
         </div>
-        <p class="caption"><%= "#{user.musics.count} 楽曲" %></p>
         <% end %>
       </div>
       <% end %>
