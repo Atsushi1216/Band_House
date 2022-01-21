@@ -27,4 +27,9 @@ mount_uploader :song, AudiofileUploader
     less_than_or_equal_to: 5,
     greater_than_or_equal_to: 1
   }
+
+  validates :title, length: { in: 2..50 }, presence: true
+  validates :caption, length: { in: 2..100 }, presence: true
+  validates :song, presence: true
+
 end

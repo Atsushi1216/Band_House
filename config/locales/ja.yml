@@ -7,6 +7,13 @@ ja:
         restrict_dependent_destroy:
           has_one: "%{record}が存在しているので削除できません"
           has_many: "%{record}が存在しているので削除できません"
+      music:
+        title: "曲名"
+        song: "曲"
+        caption: "説明"
+        Evaluation: "自己評価"
+        song_image_id: "ジャケ写"
+
   date:
     abbr_day_names:
     - 日
@@ -123,7 +130,7 @@ ja:
       less_than: は%{count}より小さい値にしてください
       less_than_or_equal_to: は%{count}以下の値にしてください
       model_invalid: 'バリデーションに失敗しました: %{errors}'
-      not_a_number: は数値で入力してください
+      not_a_number: を入力してください
       not_an_integer: は整数で入力してください
       odd: は奇数にしてください
       other_than: は%{count}以外の値にしてください

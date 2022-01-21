@@ -1,3 +1,13 @@
+<h4 class="mx-auto">
+  <% if @music.errors.any? %>
+    <Strong><%= @music.errors.count %>  errors occur!  :</Strong>
+      <ul>
+        <% @music.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+        <% end %>
+      </ul>
+  <% end %>
+</h4>
 <div class="container edit-form">
   <div class="row">
     <div class="mx-auto col-md-9 col-md-push-3">
@@ -7,7 +17,7 @@
           <%= form_with model: @music, local:true do |f| %>
             <div class="field form-group row">
               <div class="col-md-6 mb-3 edit-form">
-                <div class="edit-form"style="background-color: orange;">
+                <div class="edit-form">
                   <%= f.label :title, '曲名' %>
                   <%= f.text_field :title,autofocus: true, class:"form-control", required: true %>
                 </div>

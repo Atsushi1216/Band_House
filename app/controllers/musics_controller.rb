@@ -20,16 +20,21 @@ class MusicsController < ApplicationController
   def create
     @music = Music.new(music_params)
     @music.user_id = current_user.id
-    @music.save
-    redirect_to musics_path
+    if @music.save
+      redirect_to musics_path, notice: '投稿しました。'
+      #binding.pry
+    else
+      render :new
+    end
   end
+
 
   def edit
   end
 
   def update
     if @music.update(music_params)
-      redirect_to music_path(@music.id)
+      redirect_to music_path(@music.id), notice: '編集しました。'
     else
       render :edit
     end
