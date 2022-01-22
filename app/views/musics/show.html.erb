@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-md-6">
       <div class="song-image">
-        <%= attachment_image_tag @music, :song_image, :fill, 300, 300 %>
+        <%= attachment_image_tag @music, :song_image, size: "300x300" %>
       </div>
     </div>
     <div class="col-md-6">
@@ -37,7 +37,7 @@
   <div class="row">
     <div class="music-show-profile">
       <% @music.comments.each do |comment| %>
-        <p><%= attachment_image_tag comment.user, :profile_image, :fill, 100, 100, fallback: "no_image.jpg" %></p>
+        <p><%= attachment_image_tag comment.user, :profile_image,  size: "100x100", fallback: "no_image.jpg" %></p>
     </div>
     <div class="col-md-6">
         <span>ユーザーネーム：<%= link_to comment.user.name, user_path(comment.user.id) %></span><br>

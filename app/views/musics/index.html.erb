@@ -3,7 +3,7 @@
 </div>
 <div class="container mt-5">
   <div class="row　mx-auto">
-    <div class="mx-auto col-8">
+    <div class="mx-auto">
       <div class="iine">
         <h2>人気の楽曲</h2>
         <br>
@@ -15,9 +15,6 @@
           </span>
           <span class="col-2 mt-5 mx-auto">
             <%= link_to music.user.name, user_path(music.user.id) %>さん
-          </span>
-          <span class="col-2 mt-5 mx-auto">
-            <%= music.favorites.count %>いいね！
           </span>
           <br>
           <br>
@@ -37,12 +34,16 @@
             <% @musics.each do |music| %>
 <%# binding.pry %>
               <div class="col-md-4 pb-4">
-                <div class="card shadow-sm"style="height: 21rem;">
-                  <%= link_to music_path(music.id) do %>
-                    <%= attachment_image_tag(music, :song_image, :fill, 348, 150, fallback: "no_image.jpg") %>
-                  <% end %>
-                  <br><p class="mx-auto"><%= link_to music.title, music_path(music.id) %> / <%= link_to music.user.name, user_path(music.user.id) %></p>
-                  <p class="mx-auto"><audio src= "<%= "#{music.song}" %>" controls=""></p>
+                <div class="card shadow-sm"style="height: 20rem;">
+                  <div class="jacket-image">
+                    <%= link_to music_path(music.id) do %>
+                      <%= attachment_image_tag(music, :song_image, size: "348x150", fallback: "no_image.jpg") %>
+                    <% end %>
+                  </div>
+                  <div class="time-line-content">
+                    <br><p class="mx-auto"><%= link_to music.title, music_path(music.id) %> / <%= link_to music.user.name, user_path(music.user.id) %></p>
+                    <p class="mx-auto"><audio src= "<%= "#{music.song}" %>" controls=""></p>
+                  </div>
                 </div>
               </div>
             <% end %>

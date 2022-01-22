@@ -4,9 +4,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @musics = @user.musics.page(params[:page]).reverse_order
-    @feeds = Music.where(user_id: [current_user.id, *current_user.follower_ids]).order(created_at: :desc)
-    # @following_users = @user.following_user
-    # @follower_users = @user.follower_user
+    @feeds = Music.where(user_id: [current_user.id, *current_user.following_user_ids]).order(created_at: :desc)
   end
 
   def edit
@@ -25,7 +23,7 @@ class UsersController < ApplicationController
   def music
     @user = User.find(params["user_id"])
     @musics = @user.musics.page(params[:page]).reverse_order
-    @feeds = Music.where(user_id: [current_user.id, *current_user.follower_ids]).order(created_at: :desc)
+    @feeds = Music.where(user_id: [current_user.id, *current_user.following_user_ids]).order(created_at: :desc)
     @following_users = @user.following_user
     @follower_users = @user.follower_user
   end

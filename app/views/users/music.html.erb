@@ -8,7 +8,7 @@
         <div class="col-md-4 pb-4">
          <div class="card shadow-sm " style="height: 33rem;" >
           <%= link_to music_path(music.id) do %>
-            <%= attachment_image_tag(music, :song_image, :fill, 348, 150, fallback: "no_image.jpg")  %>
+            <%= attachment_image_tag(music, :song_image, size: "348x150", fallback: "no_image.jpg")  %>
             <% end %><br>
             <p>曲名：<%= link_to music.title,  music_path(music.id) %></p>
             <p><%= music.caption %></p></br>

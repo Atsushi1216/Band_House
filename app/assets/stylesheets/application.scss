@@ -289,22 +289,22 @@ footer  {
 }
 
 .show-image{
-  margin-top: 40px;
-   margin-right: 200px;
-   margin-left: 200px;
+  text-align: center;
+}
+
+.show-content{
+  text-align: left;
 }
 
 .song-image {
-    margin: 50px 100px 70px 150px;
+    text-align: center;
+    margin-top: 20px;
 }
 
 .music-evaluation {
   text-align: center;
 }
 
-.iine {
-   margin-left: 100px;
-}
 
 .edit-form {
   text-align: center;
@@ -319,7 +319,7 @@ footer  {
   padding: 3px 5px;
   border-radius: 20px;
   height: 2.0em;
-  width: 245px;
+  width: 200px;
   overflow: hidden;
 }
 .search-form input[type="text"]:focus {
@@ -345,435 +345,24 @@ footer  {
   outline : none;
   height: 2.2em
 }
-
-
-/* タブレット横置きサイズ（1024px）以下の際に適用される設定 */
-@media screen and (max-width:1024px) {
-  body {
-  font-family: 'Kiwi Maru', serif;
-  font-size: 15px;
-  line-height: 1.8;
-  color: #000000;
-  background-image: none;
-  background-color: #ffffff;
-  margin: 0 auto;
-}
-
-header.masthead {
-  padding-top: 10rem;
-  padding-bottom: calc(10rem - 4.5rem);
-  background-image: image-url('gahag-0071430289-1.jpg'),linear-gradient(to bottom, rgba(100, 100, 100, 0.8) 0%, rgba(100, 100, 100, 0.8) 100%);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: scroll;
-  background-size: cover;
-}
-header.masthead h1, header.masthead .h1 {
-  font-size: 2.25rem;
-}
-@media (min-width: 992px) {
-  header.masthead {
-    height: 100vh;
-    min-height: 40rem;
-    padding-top: 4.5rem;
-    padding-bottom: 0;
-  }
-  header.masthead p {
-    font-size: 1.15rem;
-  }
-  header.masthead h1, header.masthead .h1 {
-    font-size: 3rem;
-  }
-}
-@media (min-width: 1200px) {
-  header.masthead h1, header.masthead .h1 {
-    font-size: 3.5rem;
-  }
-}
-
-.btn-xl {
-  padding: 1.25rem 2.25rem;
-  font-size: 0.85rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  border: none;
-  border-radius: 10rem;
-}
-
-hr.divider {
-  height: 0.2rem;
-  max-width: 3.25rem;
-  margin: 1.5rem auto;
-  background-color: #f4623a;
-  opacity: 1;
-}
-
-hr.divider-light {
-  background-color: #fff;
-}
-
-
-.dropdown-divider {
-  height: 0;
-  margin: 0.5rem 0;
-  overflow: hidden;
-  border-top: 1px solid rgba(0, 0, 0, 0.15);
-}
-
-.dropdown-menu-dark .dropdown-divider {
-  border-color: rgba(0, 0, 0, 0.15);
-}
-
-.page-section {
-  padding: 8rem 0;
-}
-
-.bg-primary {
-  --bs-bg-opacity: 1;
-  background-color: rgba(var(--bs-primary-rgb), var(--bs-bg-opacity)) !important;
-}
-
-.bg-opacity-10 {
-  --bs-bg-opacity: 0.1;
-}
-
-.bg-opacity-25 {
-  --bs-bg-opacity: 0.25;
-}
-
-.bg-opacity-50 {
-  --bs-bg-opacity: 0.5;
-}
-
-.bg-opacity-75 {
-  --bs-bg-opacity: 0.75;
-}
-
-.bg-opacity-100 {
-  --bs-bg-opacity: 1;
-}
-
-.form-button {
-    background-color: #0066CC;
-    color: #fff;
-    border-style: none;
-    padding: 10px 30px;
-    border-radius: 2px;
-    width: 150px;
-}
-
-
-// top
-.main-visual {
-  background-image: image-url('gahag-0071430289-1.jpg');
-  width: 100%;
-  height: 500px;
-  background-size: cover;
-}
-
-.top-text {
-  color: #fff;
-  background-color: rgba( 0, 0, 0, 0.5);
-}
-
-
-.about-visual {
-  background-image: image-url('about.png');
-  width: 100%;
-  height: 450px;
-  background-size: cover;
-}
-
-.about-text {
-  color: #fff;
-  background-color: rgba( 0, 0, 0, 0.5);
-}
-
-.about-more {
-  color: #fff;
-  background-color: rgba( 0, 0, 0, 0.5);
-  text-align: center;
-}
-// header
-.navbar {
-  margin-bottom: 40px;
-}
-
-.navbar-text {
-  margin-right: 10px;
-}
-
-.nav-link {
-  font-weight: 400;
-  font-size: 18px;
-}
-
-.navbar-toggler {
-  background-color: #FF8C00;
-}
-
-//footer
-footer  {
-  padding-top: 20px;
-  padding-bottom: 20px;
-  justify-content: center;
-  background-color: #ffffff;
-}
-
-.footer-logo {
-    display:flex;
-    justify-content: center;
-}
-
-.site-info {
+.jacket-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     text-align: center;
-    margin-top: 10px;
-    font-size: 8px;
-}
-
-.sign_up_form {
-  justify-content: center;
-}
-
-//music index
-.jacket {
-  padding-top: 5px;
-}
-
-.music-show {
-    text-align: center;
-    margin-top: 10px;
-}
-
-.comment {
-    text-align: center;
-    width: 50px;
-    margin-top: 10px;
-}
-
-.comment-form {
-    text-align: center;
-    margin-top: 10px;
-}
-
-.music-show-profile {
-   text-align: center;
-}
-
-.show-name {
- text-align: center;
-}
-
-.show-image{
-  margin-top: 40px;
-   margin-right: 200px;
-   margin-left: 200px;
-}
-
-.song-image {
-    margin: 50px 100px 70px 150px;
-}
-
-.music-evaluation {
-  text-align: center;
-}
-
-.iine {
-   margin-left: 100px;
-}
-
-.edit-form {
-  text-align: center;
-}
-
-.search-form{
-  box-sizing: border-box;
-  padding-top: 25px;
-}
-.search-form input[type="text"]{
-  border: 1px solid #999;
-  padding: 3px 5px;
-  border-radius: 20px;
-  height: 2.0em;
-  width: 245px;
-  overflow: hidden;
-}
-.search-form input[type="text"]:focus {
-  outline: 0;
-}
-
-.search-form input[type="tag"]{
-  border: 1px solid #999;
-  padding: 5px 5px;
-  border-radius: 20px;
-  height: 2.0em;
-  width: 120px;
-  overflow: hidden;
-}
-
-.search-form input[type="submit"]{
-  margin-top: 5px;
-  cursor: pointer;
-  border: none;
-  border-radius: 20%;
-  background: #FF82B2;
-  color: #fff;
-  outline : none;
-  height: 2.2em
 }
 
 
-
-}
 /* タブレット縦置きサイズ（768px）以下の際に適用される設定 */
 @media screen and (max-width:768px) {
-  body {
-  font-family: 'Kiwi Maru', serif;
-  font-size: 15px;
-  line-height: 1.8;
-  color: #000000;
-  background-image: none;
-  background-color: #ffffff;
-  margin: 0 auto;
-}
-
-header.masthead {
-  padding-top: 10rem;
-  padding-bottom: calc(10rem - 4.5rem);
-  background-image: image-url('gahag-0071430289-1.jpg'),linear-gradient(to bottom, rgba(100, 100, 100, 0.8) 0%, rgba(100, 100, 100, 0.8) 100%);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: scroll;
-  background-size: cover;
-}
-header.masthead h1, header.masthead .h1 {
-  font-size: 2.25rem;
-}
-@media (min-width: 992px) {
   header.masthead {
     height: 100vh;
-    min-height: 40rem;
+    min-height: 20rem;
     padding-top: 4.5rem;
     padding-bottom: 0;
+    font-size: 1rem;
   }
-  header.masthead p {
-    font-size: 1.15rem;
-  }
-  header.masthead h1, header.masthead .h1 {
-    font-size: 3rem;
-  }
-}
-@media (min-width: 1200px) {
-  header.masthead h1, header.masthead .h1 {
-    font-size: 3.5rem;
-  }
-}
-
-.btn-xl {
-  padding: 1.25rem 2.25rem;
-  font-size: 0.85rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  border: none;
-  border-radius: 10rem;
-}
-
-hr.divider {
-  height: 0.2rem;
-  max-width: 3.25rem;
-  margin: 1.5rem auto;
-  background-color: #f4623a;
-  opacity: 1;
-}
-
-hr.divider-light {
-  background-color: #fff;
-}
-
-
-.dropdown-divider {
-  height: 0;
-  margin: 0.5rem 0;
-  overflow: hidden;
-  border-top: 1px solid rgba(0, 0, 0, 0.15);
-}
-
-.dropdown-menu-dark .dropdown-divider {
-  border-color: rgba(0, 0, 0, 0.15);
-}
-
-.page-section {
-  padding: 8rem 0;
-}
-
-.bg-primary {
-  --bs-bg-opacity: 1;
-  background-color: rgba(var(--bs-primary-rgb), var(--bs-bg-opacity)) !important;
-}
-
-.bg-opacity-10 {
-  --bs-bg-opacity: 0.1;
-}
-
-.bg-opacity-25 {
-  --bs-bg-opacity: 0.25;
-}
-
-.bg-opacity-50 {
-  --bs-bg-opacity: 0.5;
-}
-
-.bg-opacity-75 {
-  --bs-bg-opacity: 0.75;
-}
-
-.bg-opacity-100 {
-  --bs-bg-opacity: 1;
-}
-
-.form-button {
-    background-color: #0066CC;
-    color: #fff;
-    border-style: none;
-    padding: 10px 30px;
-    border-radius: 2px;
-    width: 150px;
-}
-
-
-// top
-.main-visual {
-  background-image: image-url('gahag-0071430289-1.jpg');
-  width: 100%;
-  height: 500px;
-  background-size: cover;
-}
-
-.top-text {
-  color: #fff;
-  background-color: rgba( 0, 0, 0, 0.5);
-}
-
-
-.about-visual {
-  background-image: image-url('about.png');
-  width: 100%;
-  height: 450px;
-  background-size: cover;
-}
-
-.about-text {
-  color: #fff;
-  background-color: rgba( 0, 0, 0, 0.5);
-}
-
-.about-more {
-  color: #fff;
-  background-color: rgba( 0, 0, 0, 0.5);
-  text-align: center;
-}
-// header
-.navbar {
+  .navbar {
   margin-bottom: 40px;
 }
 
@@ -783,362 +372,34 @@ hr.divider-light {
 
 .nav-link {
   font-weight: 400;
-  font-size: 18px;
+  font-size: 12px;
 }
 
 .navbar-toggler {
   background-color: #FF8C00;
 }
 
-//footer
-footer  {
-  padding-top: 20px;
-  padding-bottom: 20px;
-  justify-content: center;
-  background-color: #ffffff;
-}
 
-.footer-logo {
-    display:flex;
-    justify-content: center;
-}
-
-.site-info {
+  .jacket-image {
     text-align: center;
-    margin-top: 10px;
-    font-size: 8px;
 }
-
-.sign_up_form {
-  justify-content: center;
-}
-
-//music index
-.jacket {
-  padding-top: 5px;
-}
-
-.music-show {
+  .show-image{
+    width:  100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
     text-align: center;
-    margin-top: 10px;
-}
-
-.comment {
-    text-align: center;
-    width: 50px;
-    margin-top: 10px;
-}
-
-.comment-form {
-    text-align: center;
-    margin-top: 10px;
-}
-
-.music-show-profile {
-   text-align: center;
-}
-
-.show-name {
- text-align: center;
-}
-
-.show-image{
-  margin-top: 40px;
-   margin-right: 200px;
-   margin-left: 200px;
-}
-
-.song-image {
-    margin: 50px 100px 70px 150px;
-}
-
-.music-evaluation {
+  }
+  .show-content{
   text-align: center;
 }
-
-.iine {
-   margin-left: 100px;
+  .time-line-content{
+    margin-top: 50px;
+  }
 }
 
-.edit-form {
-  text-align: center;
-}
-
-.search-form{
-  box-sizing: border-box;
-  padding-top: 25px;
-}
-.search-form input[type="text"]{
-  border: 1px solid #999;
-  padding: 3px 5px;
-  border-radius: 20px;
-  height: 2.0em;
-  width: 245px;
-  overflow: hidden;
-}
-.search-form input[type="text"]:focus {
-  outline: 0;
-}
-
-.search-form input[type="tag"]{
-  border: 1px solid #999;
-  padding: 5px 5px;
-  border-radius: 20px;
-  height: 2.0em;
-  width: 120px;
-  overflow: hidden;
-}
-
-.search-form input[type="submit"]{
-  margin-top: 5px;
-  cursor: pointer;
-  border: none;
-  border-radius: 20%;
-  background: #FF82B2;
-  color: #fff;
-  outline : none;
-  height: 2.2em
-}
-}
 /* スマートフォンサイズ（425px）以下の際に適用される設定 */
 @media screen and (max-width:425px) {
-  body {
-  font-family: 'Kiwi Maru', serif;
-  font-size: 15px;
-  line-height: 1.8;
-  color: #000000;
-  background-image: none;
-  background-color: #ffffff;
-  margin: 0 auto;
-}
-
-header.masthead {
-  padding-top: 10rem;
-  padding-bottom: calc(10rem - 4.5rem);
-  background-image: image-url('gahag-0071430289-1.jpg'),linear-gradient(to bottom, rgba(100, 100, 100, 0.8) 0%, rgba(100, 100, 100, 0.8) 100%);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: scroll;
-  background-size: cover;
-}
-header.masthead h1, header.masthead .h1 {
-  font-size: 2.25rem;
-}
-@media (min-width: 992px) {
-  header.masthead {
-    height: 100vh;
-    min-height: 40rem;
-    padding-top: 4.5rem;
-    padding-bottom: 0;
-  }
-  header.masthead p {
-    font-size: 1.15rem;
-  }
-  header.masthead h1, header.masthead .h1 {
-    font-size: 3rem;
-  }
-}
-@media (min-width: 1200px) {
-  header.masthead h1, header.masthead .h1 {
-    font-size: 3.5rem;
-  }
-}
-
-.btn-xl {
-  padding: 1.25rem 2.25rem;
-  font-size: 0.85rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  border: none;
-  border-radius: 10rem;
-}
-
-hr.divider {
-  height: 0.2rem;
-  max-width: 3.25rem;
-  margin: 1.5rem auto;
-  background-color: #f4623a;
-  opacity: 1;
-}
-
-hr.divider-light {
-  background-color: #fff;
-}
-
-
-.dropdown-divider {
-  height: 0;
-  margin: 0.5rem 0;
-  overflow: hidden;
-  border-top: 1px solid rgba(0, 0, 0, 0.15);
-}
-
-.dropdown-menu-dark .dropdown-divider {
-  border-color: rgba(0, 0, 0, 0.15);
-}
-
-.page-section {
-  padding: 8rem 0;
-}
-
-.bg-primary {
-  --bs-bg-opacity: 1;
-  background-color: rgba(var(--bs-primary-rgb), var(--bs-bg-opacity)) !important;
-}
-
-.bg-opacity-10 {
-  --bs-bg-opacity: 0.1;
-}
-
-.bg-opacity-25 {
-  --bs-bg-opacity: 0.25;
-}
-
-.bg-opacity-50 {
-  --bs-bg-opacity: 0.5;
-}
-
-.bg-opacity-75 {
-  --bs-bg-opacity: 0.75;
-}
-
-.bg-opacity-100 {
-  --bs-bg-opacity: 1;
-}
-
-.form-button {
-    background-color: #0066CC;
-    color: #fff;
-    border-style: none;
-    padding: 10px 30px;
-    border-radius: 2px;
-    width: 150px;
-}
-
-
-// top
-.main-visual {
-  background-image: image-url('gahag-0071430289-1.jpg');
-  width: 100%;
-  height: 500px;
-  background-size: cover;
-}
-
-.top-text {
-  color: #fff;
-  background-color: rgba( 0, 0, 0, 0.5);
-}
-
-
-.about-visual {
-  background-image: image-url('about.png');
-  width: 100%;
-  height: 450px;
-  background-size: cover;
-}
-
-.about-text {
-  color: #fff;
-  background-color: rgba( 0, 0, 0, 0.5);
-}
-
-.about-more {
-  color: #fff;
-  background-color: rgba( 0, 0, 0, 0.5);
-  text-align: center;
-}
-// header
-.navbar {
-  margin-bottom: 40px;
-}
-
-.navbar-text {
-  margin-right: 10px;
-}
-
-.nav-link {
-  font-weight: 400;
-  font-size: 18px;
-}
-
-.navbar-toggler {
-  background-color: #FF8C00;
-}
-
-//footer
-footer  {
-  padding-top: 20px;
-  padding-bottom: 20px;
-  justify-content: center;
-  background-color: #ffffff;
-}
-
-.footer-logo {
-    display:flex;
-    justify-content: center;
-}
-
-.site-info {
-    text-align: center;
-    margin-top: 10px;
-    font-size: 8px;
-}
-
-.sign_up_form {
-  justify-content: center;
-}
-
-//music index
-.jacket {
-  padding-top: 5px;
-}
-
-.music-show {
-    text-align: center;
-    margin-top: 10px;
-}
-
-.comment {
-    text-align: center;
-    width: 50px;
-    margin-top: 10px;
-}
-
-.comment-form {
-    text-align: center;
-    margin-top: 10px;
-}
-
-.music-show-profile {
-   text-align: center;
-}
-
-.show-name {
- text-align: center;
-}
-
-.show-image{
-  margin-top: 40px;
-   margin-right: 200px;
-   margin-left: 200px;
-}
-
-.song-image {
-    margin: 50px 100px 70px 150px;
-}
-
-.music-evaluation {
-  text-align: center;
-}
-
-.iine {
-   margin-left: 100px;
-}
-
-.edit-form {
-  text-align: center;
-}
-
 .search-form{
   box-sizing: border-box;
   padding-top: 25px;
@@ -1148,7 +409,7 @@ footer  {
   padding: 3px 5px;
   border-radius: 20px;
   height: 2.0em;
-  width: 245px;
+  width: 120px;
   overflow: hidden;
 }
 .search-form input[type="text"]:focus {
@@ -1173,5 +434,30 @@ footer  {
   color: #fff;
   outline : none;
   height: 2.2em
+}
+  .iine{
+    text-align: center;
+
+  }
+  .show-image{
+    width:  100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    text-align: center;
+  }
+  .show-content{
+  text-align: center;
+}
+  .time-line-content{
+    margin-top: 50px;
+  }
+
+  .jacket-image {
+    width:  25%;
+    height: 25%;
+    border-radius: 50%;
+    object-fit: cover;
+    text-align: center;
 }
 }
