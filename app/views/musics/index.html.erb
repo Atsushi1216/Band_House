@@ -40,7 +40,7 @@
                       <%= attachment_image_tag(music, :song_image, size: "348x150", fallback: "no_image.jpg") %>
                     <% end %>
                   </div>
-                  <div class="time-line-content">
+                  <div class="new-song">
                     <br><p class="mx-auto"><%= link_to music.title, music_path(music.id) %> / <%= link_to music.user.name, user_path(music.user.id) %></p>
                     <p class="mx-auto"><audio src= "<%= "#{music.song}" %>" controls=""></p>
                   </div>

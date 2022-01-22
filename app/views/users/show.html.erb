@@ -38,9 +38,9 @@
 
 <% if @user == current_user %>
 <div class="container" >
- <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 " >
+ <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 show-timeline " >
     <div class="mainContents col-sm-9 col-sm-push-3 col-md-12 col-md-push-3 " >
-       <h3 class="subtitle pb-4">タイムライン（フォローしている人の楽曲）</h3>
+       <h3 class="subtitle pb-4 user-show-text">タイムライン（フォローしている人の楽曲）</h3>
       <hr>
       <div class="row" >
         <% @feeds.each do |music| %>

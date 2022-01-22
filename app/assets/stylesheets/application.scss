@@ -395,6 +395,15 @@ footer  {
 }
   .time-line-content{
     margin-top: 50px;
+    text-align: center;
+  }
+
+  .user-show-text{
+    font-size: 18px;
+  }
+
+  .show-timeline{
+    text-align: center;
   }
 }
 
@@ -425,7 +434,7 @@ footer  {
   overflow: hidden;
 }
 
-.search-form input[type="submit"]{
+.search-form input[type="submit"] {
   margin-top: 5px;
   cursor: pointer;
   border: none;
@@ -452,6 +461,9 @@ footer  {
   .time-line-content{
     margin-top: 50px;
   }
+  .new-song{
+    margin-top: 50px;
+  }
 
   .jacket-image {
     width:  25%;
@@ -460,4 +472,12 @@ footer  {
     object-fit: cover;
     text-align: center;
 }
+
+  .user-show-text{
+    font-size: 18px;
+  }
+
+  .show-timeline{
+    text-align: center;
+  }
 }
