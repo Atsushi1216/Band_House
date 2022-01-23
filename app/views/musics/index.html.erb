@@ -34,10 +34,10 @@
             <% @musics.each do |music| %>
 <%# binding.pry %>
               <div class="col-md-4 pb-4">
-                <div class="card shadow-sm"style="height: 20rem;">
+                <div class="card shadow-sm" style="width: 100%; height: 26rem;">
                   <div class="jacket-image">
                     <%= link_to music_path(music.id) do %>
-                      <%= attachment_image_tag(music, :song_image, size: "348x150", fallback: "no_image.jpg") %>
+                      <%= attachment_image_tag(music, :song_image, fallback: "no_image.jpg", class: "jacket-image") %>
                     <% end %>
                   </div>
                   <div class="new-song">
