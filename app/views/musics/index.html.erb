@@ -35,14 +35,14 @@
 <%# binding.pry %>
               <div class="col-md-4 pb-4">
                 <div class="card shadow-sm" style="width: 100%; height: 26rem;">
-                  <div class="jacket-image">
+                  <div>
                     <%= link_to music_path(music.id) do %>
                       <%= attachment_image_tag(music, :song_image, fallback: "no_image.jpg", class: "jacket-image") %>
                     <% end %>
                   </div>
                   <div class="new-song">
                     <br><p class="mx-auto"><%= link_to music.title, music_path(music.id) %> / <%= link_to music.user.name, user_path(music.user.id) %></p>
-                    <p class="mx-auto"><audio src= "<%= "#{music.song}" %>" controls=""></p>
+                    <p class="mx-auto"><audio src= "<%= music.song %>" controls="" class="audio-form"></p>
                   </div>
                 </div>
               </div>

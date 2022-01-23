@@ -354,16 +354,29 @@ footer  {
     object-fit: cover;
     text-align: center;
 }
-  .audio-form{
-    width: 100%;
-  }
+audio.audio-form {
+  width: 286px;
+}
 
   .favorite-content{
     justify-content: center;
   }
 
+/* タブレット縦置きサイズ（992px）以下の際に適用される設定 */
+@media screen and (max-width:992px) {
+  .col-md-4 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}
+
 /* タブレット縦置きサイズ（768px）以下の際に適用される設定 */
 @media screen and (max-width:768px) {
+   .col-md-4 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
   header.masthead {
     height: 100vh;
     min-height: 20rem;
@@ -475,9 +488,7 @@ footer  {
   .time-line-content{
     margin-top: 50px;
   }
-  .new-song{
-    margin-top: 50px;
-  }
+
 
   .jacket-image {
     width: 100%;
