@@ -10,43 +10,43 @@
 </h4>
 
 <div class="container">
-  <div class="row">
+  <div class="row ">
     <div class="mx-auto" >
       <div class="mx-auto">
           <h2 class="field form-group row">
-           <div class="mx-auto col-md-6 mb-3">
+           <div class="mx-auto col mb-3">
              投稿用フォーム
             </div>
           </h2>
         <%= form_with model: @music, local:true do |f| %>
           <div class="field form-group row">
-            <div class="mx-auto col-md-6 mb-3">
+            <div class="mx-auto col mb-3">
               <%= f.label :曲名, class:"form-label" %>
               <%= f.text_field :title, autofocus: true, autocomplete: "title", class:"form-control",required: true %>
             </div>
           </div>
           <div class="field form-group row">
-            <div class="mx-auto col-md-6 mb-3">
+            <div class="mx-auto col mb-3">
               <%= f.label :曲の説明, class:"form-label" %>
               <%= f.text_field :caption, autofocus: true, autocomplete: "caption", class:"form-control",required: true %>
             </div>
           </div>
           <div class="field form-group row">
-              <div class="mx-auto col-md-6 mb-3">
+              <div class="mx-auto col mb-3">
                 <%= f.label :song_image, 'ジャケ写など' %>
-                <%= f.attachment_field :song_image,autofocus: true, class:"form-control" , required: true %><br>
+                <%= f.attachment_field :song_image,autofocus: true, class:"form-control" , required: true %>
               </div>
             </div>
             <div class="field form-group row">
-              <div class="mx-auto col-md-6 mb-3">
+              <div class="mx-auto col mb-3">
                 <%= f.label :song, '曲の選択' %>
-                <%= f.file_field :song , :size => 140,autofocus: true,class:"form-control" , required: true %>
+                <%= f.file_field :song , :size => 140,autofocus: true, class:"form-control" , required: true %>
                 <p6><strong>※外部サイトは使用できません。また、転載は禁止です。</strong></p6>
               </div>
             </div>
             <br>
              <div class="field form-group row">
-              <div class="mx-auto col-md-6 mb-3">
+              <div class="mx-auto col mb-3">
                 <div id="evaluate_stars">
                   <%= f.label :evaluation, '自己評価　　' %>
                 </div>
@@ -57,7 +57,7 @@
                <div class="row">
                   <div class="mx-auto" >
                     <div class="actions">
-                      <%= f.submit "曲を投稿", class: "btn form-button" %>
+                      <%= f.submit "曲を投稿", class: "btn btn-primary btn-xl" %>
                     </div>
                   </div>
                 </div>
