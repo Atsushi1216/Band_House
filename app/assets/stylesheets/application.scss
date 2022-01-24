@@ -362,6 +362,9 @@ audio.audio-form {
     justify-content: center;
   }
 
+  .iine{
+    text-align: center;
+  }
 /* タブレット縦置きサイズ（992px）以下の際に適用される設定 */
 @media screen and (max-width:992px) {
   .col-md-4 {
