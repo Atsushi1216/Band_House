@@ -33,14 +33,14 @@
           </div>
           <div class="field form-group row">
               <div class="mx-auto col mb-3">
-                <%= f.label :song_image, 'ジャケ写など' %>
-                <%= f.attachment_field :song_image,autofocus: true, class:"form-control" , required: true %>
+                <%= f.label :song_image, 'ジャケ写など' %><br>
+                <%= f.attachment_field :song_image,autofocus: true, required: true %>
               </div>
             </div>
             <div class="field form-group row">
               <div class="mx-auto col mb-3">
-                <%= f.label :song, '曲の選択' %>
-                <%= f.file_field :song , :size => 140,autofocus: true, class:"form-control" , required: true %>
+                <%= f.label :song, '曲の選択' %><br>
+                <%= f.file_field :song , :size => 140,autofocus: true, required: true %><br>
                 <p6><strong>※外部サイトは使用できません。また、他人の転載は禁止です。</strong></p6>
               </div>
             </div>

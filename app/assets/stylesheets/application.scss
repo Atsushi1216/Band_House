@@ -383,6 +383,10 @@ audio.audio-form {
     line-height: 40px;
   }
 
+  .form-content{
+    justify-content: center;
+  }
+
 /* タブレット縦置きサイズ（992px）以下の際に適用される設定 */
 @media screen and (max-width:992px) {
   .col-md-4 {
