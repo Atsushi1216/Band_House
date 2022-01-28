@@ -54,11 +54,11 @@
               <%= attachment_image_tag(music, :song_image, fallback: "no_image.jpg" , class: "jacket-image") %>
             <% end %><br>
           </div>
-            <div class="time-line-content">
+            <div class="time-line-content mx-auto">
               <p>@<%= link_to music.user.name, user_path(music.user.id) %></p>
               <p>曲名：<%= music.title %></p>
               <p>曲について：<%= music.caption %></p></br>
-              <p class="mx-auto audio-form"><audio src= "<%= "#{music.song}" %>" controls="", class: "audio-form")></audio></p>
+              <p class="mx-auto"><audio src= "<%= "#{music.song}" %>" controls="", class: "audio-form")></audio></p>
               <p class="mx-auto">自己評価</p>
               <p class="text-center">
               <h5 class="music-evaluation" data-score="<%= music.evaluation %>"></h5></p>
