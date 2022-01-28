@@ -14,10 +14,11 @@
   <p>ユーザーネーム：<%= @music.user.name %></p>
   <p><audio src= "<%= "#{@music.song}" %>" controls=""></audio></p>
   <p>投稿日：<%= @music.created_at.strftime('%Y/%m/%d') %></p>
-  <div class="music-evaluation" data-score="<%= @music.evaluation %>"></div>
+  <div>自己評価：
+  <p class="song-evaluation" data-score="<%= @music.evaluation %>"></p></div>
    <script>
-      $('.music-evaluation').empty();
-      $('.music-evaluation').raty({
+      $('.song-evaluation').empty();
+      $('.song-evaluation').raty({
         readOnly: true,
         starOn: "<%= asset_path('star-on.png') %>",
         starOff: "<%= asset_path('star-off.png') %>",
