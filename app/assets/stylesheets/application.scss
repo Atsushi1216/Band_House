@@ -18,7 +18,7 @@
 @import 'font-awesome';
 @import url('https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@300&family=Montserrat:wght@300&family=Reggae+One&display=swap');
 
-
+//ひっぱってくる色を設定
 :root {
   --bs-blue: #0d6efd;
   --bs-indigo: #6610f2;
@@ -83,6 +83,7 @@ body {
   margin: 0 auto;
 }
 
+//top画面
 header.masthead {
   padding-top: 10rem;
   padding-bottom: calc(10rem - 4.5rem);
@@ -115,6 +116,7 @@ header.masthead h1, header.masthead .h1 {
   }
 }
 
+//ボタンの設定
 .btn-xl {
   padding: 1.25rem 2.25rem;
   font-size: 0.85rem;
@@ -177,6 +179,7 @@ hr.divider-light {
   --bs-bg-opacity: 1;
 }
 
+//2種類目のボタン設定
 .form-button {
     background-color: #0066CC;
     color: #fff;
@@ -187,7 +190,7 @@ hr.divider-light {
 }
 
 
-// top
+// top画像
 .main-visual {
   background-image: image-url('gahag-0071430289-1.jpg');
   width: 100%;
@@ -200,7 +203,7 @@ hr.divider-light {
   background-color: rgba( 0, 0, 0, 0.5);
 }
 
-
+//aboutページ
 .about-visual {
   background-image: image-url('about.png');
   width: 100%;
@@ -218,6 +221,7 @@ hr.divider-light {
   background-color: rgba( 0, 0, 0, 0.5);
   text-align: center;
 }
+
 // header
 .navbar {
   margin-bottom: 40px;
@@ -259,7 +263,7 @@ footer  {
   justify-content: center;
 }
 
-//music index
+//musicのVeiwページ
 .jacket-image {
     width:  100%;
     height: 10vh;
@@ -313,6 +317,7 @@ footer  {
   text-align: center;
 }
 
+//headerの表示する検索フォームの設定
 .search-form{
   box-sizing: border-box;
   padding-top: 25px;
@@ -348,47 +353,37 @@ footer  {
   outline : none;
   height: 2.2em
 }
+//ジャケ写の設定
 .jacket-image {
     width: 100%;
     height: 250px;
     object-fit: cover;
     text-align: center;
 }
+
+//audioプレイヤーの大きさ設定
 audio.audio-form {
   width: 286px;
 }
 
+//favoriteViewの設定
   .favorite-content{
     justify-content: center;
     text-align: center;
   }
 
+//いいねのview設定
   .iine{
     text-align: center;
   }
 
-  .item_image_btn{
-    display: none;
-  }
-
-  #img_field {
-    font-size: 20px;
-    font-style: inherit;
-    margin: 0 auto;
-    color: white;
-    background-color: #00CCFF;
-    border-radius: 7px;
-    width: 300px;
-    height: 40px;
-    text-align: center;
-    line-height: 40px;
-  }
-
+//お問い合わせフォームの設定
   .form-content{
     justify-content: center;
 
   }
 
+//以下レスポンシブ対応
 /* タブレット縦置きサイズ（992px）以下の際に適用される設定 */
 @media screen and (max-width:992px) {
   .col-md-4 {
@@ -424,17 +419,14 @@ audio.audio-form {
   font-size: 12px;
 }
 
-.navbar-toggler {
-  background-color: #FF8C00;
-}
-
-
 .jacket-image {
     width: 100%;
     height: 250px;
     object-fit: cover;
     text-align: center;
 }
+
+
   .show-image{
     width:  100%;
     height: 100%;
@@ -464,44 +456,41 @@ audio.audio-form {
 /* スマートフォンサイズ（425px）以下の際に適用される設定 */
 @media screen and (max-width:425px) {
 .search-form{
-  box-sizing: border-box;
-  padding-top: 25px;
-}
+    box-sizing: border-box;
+    padding-top: 25px;
+  }
 .search-form input[type="text"]{
-  border: 1px solid #999;
-  padding: 3px 5px;
-  border-radius: 20px;
-  height: 2.0em;
-  width: 120px;
-  overflow: hidden;
-}
+    border: 1px solid #999;
+    padding: 3px 5px;
+    border-radius: 20px;
+    height: 2.0em;
+    width: 120px;
+    overflow: hidden;
+  }
 .search-form input[type="text"]:focus {
-  outline: 0;
-}
+    outline: 0;
+  }
 
 .search-form input[type="tag"]{
-  border: 1px solid #999;
-  padding: 5px 5px;
-  border-radius: 20px;
-  height: 2.0em;
-  width: 120px;
-  overflow: hidden;
-}
+    border: 1px solid #999;
+    padding: 5px 5px;
+    border-radius: 20px;
+    height: 2.0em;
+    width: 120px;
+    overflow: hidden;
+  }
 
 .search-form input[type="submit"] {
-  margin-top: 5px;
-  cursor: pointer;
-  border: none;
-  border-radius: 20%;
-  background: #FF82B2;
-  color: #fff;
-  outline : none;
-  height: 2.2em
-}
-  .iine{
-    text-align: center;
-
+    margin-top: 5px;
+    cursor: pointer;
+    border: none;
+    border-radius: 20%;
+    background: #FF82B2;
+    color: #fff;
+    outline : none;
+    height: 2.2em
   }
+
   .show-image{
     width:  100%;
     height: 100%;
@@ -510,24 +499,9 @@ audio.audio-form {
     text-align: center;
   }
   .show-content{
-  text-align: center;
-}
+    text-align: center;
+  }
+
   .time-line-content{
     margin-top: 50px;
   }
-
-
-  .jacket-image {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
-    text-align: center;
-}
-  .user-show-text{
-    font-size: 18px;
-  }
-
-  .show-timeline{
-    text-align: center;
-  }
-}

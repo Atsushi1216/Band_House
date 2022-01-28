@@ -4,7 +4,7 @@
     <div class="mainContents col-sm-9 col-sm-push-3 col-md-12 col-md-push-3 ">
       <h2 class="subtitle pb-4">いいねした楽曲一覧</h2>
         <div class="row">
-<%# binding.pry %>
+          <%# binding.pry %>
             <% @favorite_musics.each do |music| %>
               <div class="col-md-4 pb-4">
                 <div class="card shadow-sm"style="width: 100%; height: 28rem;">
@@ -15,7 +15,7 @@
                   </div>
                   <br>
                   <div class="favorite-content">
-                    <p class="mx-auto "><%= link_to music.title, music_path(music.id) %> / <%= link_to music.user.name, user_path(music.user.id) %></p>
+                    <p class="mx-auto"><%= link_to music.title, music_path(music.id) %> / <%= link_to music.user.name, user_path(music.user.id) %></p>
                     <p class="mx-auto"><audio src= "<%= "#{music.song}" %>" controls=""></p>
                   </div>
                   </div>
