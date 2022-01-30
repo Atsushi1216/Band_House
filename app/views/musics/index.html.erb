@@ -7,24 +7,24 @@
 <br>
   <div class="container mt-5" >
     <div class="row justify-content: center;">
-          <% @all_ranks.each.with_index(1) do |music, i| %>
-           <div class="col-lg-4 col-md-4 mb-4">
-            <h4>第<%= i %>位</h4>
-            <span>
-              <%= link_to music_path(music.id) do %>
-                <%= attachment_image_tag(music, :song_image, fallback: "no_image.jpg", class: "jacket-image") %>
-              <% end %>
-            </span>
-            <span class="col-2 mt-5 mx-auto">
-              <%= music.title %>
-            </span><br>
-            <span class="col-2 mt-5 mx-auto">
-              <%= link_to music.user.name, user_path(music.user.id) %>さん
-            </span>
-            <br>
-            <br>
-            </div>
-          <% end %>
+      <% @all_ranks.each.with_index(1) do |music, i| %>
+        <div class="col-lg-4 col-md-4 mb-4">
+          <h4>第<%= i %>位</h4>
+          <span>
+            <%= link_to music_path(music.id) do %>
+              <%= attachment_image_tag(music, :song_image, fallback: "no_image.jpg", class: "jacket-image") %>
+            <% end %>
+          </span>
+          <span class="col-2 mt-5 mx-auto">
+            <%= music.title %>
+          </span><br>
+          <span class="col-2 mt-5 mx-auto">
+            <%= link_to music.user.name, user_path(music.user.id) %>さん
+          </span>
+          <br>
+          <br>
+        </div>
+      <% end %>
     </div>
   </div>
 <hr>
@@ -56,8 +56,6 @@
       </div>
     </div>
   </div>
-  </tbody>
-</table>
 <div class="container col-2 mt-5 mx-auto">
   <span>
     <%= paginate @musics %>
