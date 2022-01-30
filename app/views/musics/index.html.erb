@@ -5,57 +5,56 @@
   <h2>人気の楽曲</h2>
 </div>
 <br>
-<div class="container mt-5" >
-  <div class="row justify-content: center;">
-        <% @all_ranks.each.with_index(1) do |music, i| %>
-         <div class="col-lg-4 col-md-4 mb-4">
-          <h4>第<%= i %>位</h4>
-          <span>
-            <%= link_to music_path(music.id) do %>
-              <%= attachment_image_tag(music, :song_image, fallback: "no_image.jpg", class: "jacket-image") %>
-            <% end %>
-          </span>
-          <span class="col-2 mt-5 mx-auto">
-            <%= music.title %>
-          </span><br>
-          <span class="col-2 mt-5 mx-auto">
-            <%= link_to music.user.name, user_path(music.user.id) %>さん
-          </span>
-          <br>
-          <br>
-          </div>
-        <% end %>
+  <div class="container mt-5" >
+    <div class="row justify-content: center;">
+          <% @all_ranks.each.with_index(1) do |music, i| %>
+           <div class="col-lg-4 col-md-4 mb-4">
+            <h4>第<%= i %>位</h4>
+            <span>
+              <%= link_to music_path(music.id) do %>
+                <%= attachment_image_tag(music, :song_image, fallback: "no_image.jpg", class: "jacket-image") %>
+              <% end %>
+            </span>
+            <span class="col-2 mt-5 mx-auto">
+              <%= music.title %>
+            </span><br>
+            <span class="col-2 mt-5 mx-auto">
+              <%= link_to music.user.name, user_path(music.user.id) %>さん
+            </span>
+            <br>
+            <br>
+            </div>
+          <% end %>
     </div>
   </div>
-</div>
 <hr>
 <div class="album py-5 bg-light">
-<div class="container">
-  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-    <div class="mainContents col-sm-9 col-sm-push-3 col-md-12 col-md-push-3 ">
-      <h2 class="subtitle pb-4">新着楽曲</h2>
-        <div class="row">
-            <% @musics.each do |music| %>
-              <%# binding.pry %>
-              <div class="col-md-4 pb-4">
-                <div class="card shadow-sm" style="width: 100%; height: 26rem;">
-                  <div>
-                    <%= link_to music_path(music.id) do %>
-                      <%= attachment_image_tag(music, :song_image, fallback: "no_image.jpg", class: "jacket-image") %>
-                    <% end %>
-                  </div>
-                  <div class="mx-auto new-song">
-                    <br><p class="mx-auto"><%= link_to music.title, music_path(music.id) %> / <%= link_to music.user.name, user_path(music.user.id) %></p>
-                    <!--scr以降でaudioリンクを持ってきて、controls=""で再生プレイヤを表示-->
-                    <p class="mx-auto"><audio src= "<%= music.song %>" controls="" class="audio-form"></p>
+  <div class="container">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+      <div class="mainContents col-sm-9 col-sm-push-3 col-md-12 col-md-push-3 ">
+        <h2 class="subtitle pb-4">新着楽曲</h2>
+          <div class="row">
+              <% @musics.each do |music| %>
+                <%# binding.pry %>
+                <div class="col-md-4 pb-4">
+                  <div class="card shadow-sm" style="width: 100%; height: 26rem;">
+                    <div>
+                      <%= link_to music_path(music.id) do %>
+                        <%= attachment_image_tag(music, :song_image, fallback: "no_image.jpg", class: "jacket-image") %>
+                      <% end %>
+                    </div>
+                    <div class="mx-auto new-song">
+                      <br><p class="mx-auto"><%= link_to music.title, music_path(music.id) %> / <%= link_to music.user.name, user_path(music.user.id) %></p>
+                      <!--scr以降でaudioリンクを持ってきて、controls=""で再生プレイヤを表示-->
+                      <p class="mx-auto"><audio src= "<%= music.song %>" controls="" class="audio-form"></p>
+                    </div>
                   </div>
                 </div>
-              </div>
-            <% end %>
-          </div>
+              <% end %>
+            </div>
+        </div>
       </div>
     </div>
-  </div>
   </div>
   </tbody>
 </table>
