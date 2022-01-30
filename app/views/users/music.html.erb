@@ -1,23 +1,23 @@
 <div class="container" >
  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 " >
     <div class="mainContents col-sm-9 col-sm-push-3 col-md-12 col-md-push-3 " >
-       <h2 class="subtitle pb-4 user-show-text"><%= @user.name %>さんの投稿一覧</h2>
-      <hr>
-      <div class="row" >
-        <% @musics.each do |music| %>
-        <div class="col-md-4 pb-4">
-         <div class="card shadow-sm " style="width: 100%; height: 38rem;" >
-          <%= link_to music_path(music.id) do %>
-            <%= attachment_image_tag(music, :song_image, fallback: "no_image.jpg", class: "jacket-image")  %>
-            <% end %><br>
-            <p>曲名：<%= link_to music.title,  music_path(music.id) %></p>
-            <p><%= music.caption %></p></br>
-            <p class="mx-auto"><audio src= "<%= "#{music.song}" %>" controls=""></audio></p>
-            <p class="mx-auto">自己評価</p>
-            <p class="text-center">
-            <h5 class="music-evaluation" data-score="<%= music.evaluation %>"></h5></p>
+      <h2 class="subtitle pb-4 user-show-text"><%= @user.name %>さんの投稿一覧</h2>
+        <hr>
+        <div class="row" >
+          <% @musics.each do |music| %>
+          <div class="col-md-4 pb-4">
+           <div class="card shadow-sm " style="width: 100%; height: 38rem;" >
+            <%= link_to music_path(music.id) do %>
+              <%= attachment_image_tag(music, :song_image, fallback: "no_image.jpg", class: "jacket-image")  %>
+              <% end %><br>
+              <p>曲名：<%= link_to music.title,  music_path(music.id) %></p>
+              <p><%= music.caption %></p></br>
+              <p class="mx-auto"><audio src= "<%= "#{music.song}" %>" controls=""></audio></p>
+              <p class="mx-auto">自己評価</p>
+              <p class="text-center">
+              <h5 class="music-evaluation" data-score="<%= music.evaluation %>"></h5></p>
+            </div>
           </div>
-        </div>
         <% end %>
       </div>
     </div>

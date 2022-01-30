@@ -9,55 +9,55 @@
       </div>
     </div>
     <div class="col-md-6">
-  <p>曲名：<%= @music.title %></p>
-  <p>説明：<%= @music.caption %></p>
-  <p>ユーザーネーム：<%= @music.user.name %></p>
-  <p><audio src= "<%= "#{@music.song}" %>" controls=""></audio></p>
-  <p>投稿日：<%= @music.created_at.strftime('%Y/%m/%d') %></p>
-  <div>自己評価：
-  <p class="song-evaluation" data-score="<%= @music.evaluation %>"></p></div>
-   <script>
-      $('.song-evaluation').empty();
-      $('.song-evaluation').raty({
-        readOnly: true,
-        starOn: "<%= asset_path('star-on.png') %>",
-        starOff: "<%= asset_path('star-off.png') %>",
-        starHalf: "<%= asset_path('star-half.png') %>",
-        score: function() {
-          return $(this).attr('data-score');
-        },
-      });
-  </script>
-  <% if @music.user == current_user %>
-    <%= link_to "編集", edit_music_path(@music.id) %>｜
-    <%= link_to "削除", music_path(@music), method: :delete %>
-  <% end %>
-  <div id="favorite_buttons_<%= @music.id %>">
-　　<%= render "favorites/favorite", music: @music %>
-　　<p>コメント件数：<%= @music.comments.count %></p>
-　　</div>
-　</div>
-</div>
-
-<div class="container">
-  <div class="row">
-    <div class="music-show-profile">
-      <% @music.comments.each do |comment| %>
-        <p><%= attachment_image_tag comment.user, :profile_image,  size: "100x100", fallback: "no_image.jpg" %></p>
-    </div>
-    <div class="col-md-6">
-        <span>ユーザーネーム：<%= link_to comment.user.name, user_path(comment.user.id) %></span><br>
-        <span>コメント投稿日：<%= comment.created_at.strftime('%Y/%m/%d') %></span><br>
-        <span class="comment"><%= comment.content %><br>
-        <% if comment.user == current_user %></span>
-        <div>
-          <%= link_to "削除", music_comment_path(comment.music, comment), method: :delete %>
-        </div>
-        <% end %>
+      <p>曲名：<%= @music.title %></p>
+      <p>説明：<%= @music.caption %></p>
+      <p>ユーザーネーム：<%= @music.user.name %></p>
+      <p><audio src= "<%= "#{@music.song}" %>" controls=""></audio></p>
+      <p>投稿日：<%= @music.created_at.strftime('%Y/%m/%d') %></p>
+      <div>自己評価：
+      <p class="song-evaluation" data-score="<%= @music.evaluation %>"></p></div>
+       <script>
+          $('.song-evaluation').empty();
+          $('.song-evaluation').raty({
+            readOnly: true,
+            starOn: "<%= asset_path('star-on.png') %>",
+            starOff: "<%= asset_path('star-off.png') %>",
+            starHalf: "<%= asset_path('star-half.png') %>",
+            score: function() {
+              return $(this).attr('data-score');
+            },
+          });
+      </script>
+      <% if @music.user == current_user %>
+        <%= link_to "編集", edit_music_path(@music.id) %>｜
+        <%= link_to "削除", music_path(@music), method: :delete %>
       <% end %>
+      <div id="favorite_buttons_<%= @music.id %>">
+    　　<%= render "favorites/favorite", music: @music %>
+    　　<p>コメント件数：<%= @music.comments.count %></p>
+　　  </div>
+　  </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="music-show-profile">
+        <% @music.comments.each do |comment| %>
+          <p><%= attachment_image_tag comment.user, :profile_image,  size: "100x100", fallback: "no_image.jpg" %></p>
+      </div>
+      <div class="col-md-6">
+          <span>ユーザーネーム：<%= link_to comment.user.name, user_path(comment.user.id) %></span><br>
+          <span>コメント投稿日：<%= comment.created_at.strftime('%Y/%m/%d') %></span><br>
+          <span class="comment"><%= comment.content %><br>
+          <% if comment.user == current_user %></span>
+          <div>
+            <%= link_to "削除", music_comment_path(comment.music, comment), method: :delete %>
+          </div>
+          <% end %>
+        <% end %>
+      </div>
     </div>
   </div>
-</div>
 </div>
 
 <div class="comment-form">
