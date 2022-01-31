@@ -9,6 +9,7 @@
     <div class="row justify-content: center;">
       <% @all_ranks.each.with_index(1) do |music, i| %>
         <div class="col-lg-4 col-md-4 mb-4">
+          <!--変数iを順位にする-->
           <h4>第<%= i %>位</h4>
           <span>
             <%= link_to music_path(music.id) do %>
