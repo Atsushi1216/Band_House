@@ -11,7 +11,7 @@ class MusicsController < ApplicationController
     @musics = Music.page(params[:page]).reverse_order
     @user = current_user
     @all_ranks = Music.find(Favorite.group(:music_id).order('count(music_id) desc').limit(3).pluck(:music_id))
-    #@random = Music.order("RANDOM()").limit(1)
+    @random = Music.order("RANDOM()").limit(1)
   end
 
   def new
