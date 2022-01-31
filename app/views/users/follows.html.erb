@@ -9,7 +9,7 @@
         <%= link_to user_path(user) do %>
         <p class="caption h4">　<%= user.name %></p>
         <div class="d-flex">
-          <%= attachment_image_tag user, :profile_image,  size: "100x100", format: 'jpeg', fallback: "no_image.jpg", class: "mb-3 mt-3 ml-3 profile-img" %>
+          <%= attachment_image_tag user, :profile_image, size: "100x100", format: 'jpeg', fallback: "no_image.jpg", class: "mb-3 mt-3 ml-3 profile-img rounded-circle" %>
           <h6 class="ml-5"><%= user.introduction %></h6>
           <br>
           <br>
