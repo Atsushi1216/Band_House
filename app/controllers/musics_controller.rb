@@ -2,15 +2,15 @@ class MusicsController < ApplicationController
   before_action :find_music, only: [:show, :edit, :update]
 
   def show
-    #@music_new = Music.new
-    #@user = @music.user
     @comment = Comment.new
   end
 
   def index
     @musics = Music.page(params[:page]).reverse_order
     @user = current_user
+    #ランキング機能music_idをもってきて、favoritecountを表示
     @all_ranks = Music.find(Favorite.group(:music_id).order('count(music_id) desc').limit(3).pluck(:music_id))
+    #random機能RANDOMにmusicをもってくる
     @random = Music.order("RANDOM()").limit(1)
   end
 
