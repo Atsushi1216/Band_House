@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-  #before_action :set_user, only: [:favorites]
 
   def show
     @user = User.find(params[:id])
@@ -50,10 +49,5 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:name, :profile_image, :introduction)
   end
-
-  # def set_user
-  #   @user = User.find(params["user_id"])
-  #   binding.pry
-  # end
 
 end
