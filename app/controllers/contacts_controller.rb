@@ -8,7 +8,7 @@ class ContactsController < ApplicationController
     if @contact.save
       ContactMailer.send_mail(@contact).deliver
       flash[:notice] = 'お問い合わせを受け付けました'
-      redirect_to musics_path
+      redirect_to root_path
     else
       render :new
     end
