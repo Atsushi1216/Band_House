@@ -72,18 +72,18 @@
   <hr>
 </div>
 <% end %>
-  <script>
-    $('.music-evaluation').empty();
-    $('.music-evaluation').raty({
-      readOnly: true,
-      starOn: "<%= asset_path('star-on.png') %>",
-      starOff: "<%= asset_path('star-off.png') %>",
-      starHalf: "<%= asset_path('star-half.png') %>",
-      score: function() {
-        return $(this).attr('data-score');
-      },
-    });
-  </script>
+<script>
+  $('.music-evaluation').empty();
+  $('.music-evaluation').raty({
+    readOnly: true,
+    starOn: "<%= asset_path('star-on.png') %>",
+    starOff: "<%= asset_path('star-off.png') %>",
+    starHalf: "<%= asset_path('star-half.png') %>",
+    score: function() {
+      return $(this).attr('data-score');
+    },
+  });
+</script>
 
 <div class="container col-2 mt-5 mx-auto">
   <span>
