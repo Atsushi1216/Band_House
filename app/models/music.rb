@@ -31,5 +31,6 @@ mount_uploader :song, AudiofileUploader
   validates :title, length: { in: 2..50 }, presence: true
   validates :caption, length: { in: 2..100 }, presence: true
   validates :song, presence: true
+  validates :song_image, presence: true
 
 end
