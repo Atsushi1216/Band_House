@@ -1,4 +1,5 @@
 class SearchesController < ApplicationController
+
   def search
     @range = params[:range]
     search = params[:search]
@@ -9,4 +10,5 @@ class SearchesController < ApplicationController
         @music = Music.search(search,word)
       end
   end
+
 end
