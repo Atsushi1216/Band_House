@@ -1,6 +1,7 @@
 class CommentsController < ApplicationController
   def create
     music = Music.find(params[:music_id])
+    #currentuserの新規コメントをcontentと定義
     content = current_user.comments.new(comment_params)
     content.music_id = music.id
     content.save
