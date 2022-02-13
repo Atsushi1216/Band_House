@@ -7,7 +7,7 @@
       <div class="card w-100 mb-3">
         <%= link_to user_path(user) do %>
         <h4><%= user.name %></h>
-        <div class="d-flex">
+        <div>
           <%= attachment_image_tag user, :profile_image, size: "100x100", format: 'jpeg', fallback: "no_image.jpg", class: "mb-3 mt-3 ml-3 profile-img rounded-circle" %>
           <h6><%= user.introduction %></h6>
           <br>
