@@ -1,14 +1,14 @@
-<div class="container bg-light">
+<div class="container">
   <div class="row justify-content-center">
     <h1 class="mt-5 mb-5">フォロワー一覧</h1>
   </div>
-  <div class="row justify-content-center">
+  <div class="row justify-content-center bg-light">
     <% @users.each do |user| %>
-      <div class="card w-100 mb-3">
+      <div class="w-100 mb-3">
         <%= link_to user_path(user) do %>
         <h4><%= user.name %></4>
         <div>
-          <%= attachment_image_tag user, :profile_image, class: "rounded-circle",  size: "100x100", format: 'jpeg', fallback: "no_image.jpg", class: "mb-3 mt-3 ml-3 profile-img" %>
+          <%= attachment_image_tag user, :profile_image, class: "rounded-circle",  size: "100x100", format: 'jpeg', fallback: "no_image.jpg", class: "mb-3 mt-3 ml-3 rounded-circle" %>
           <h6><%= user.introduction %></h6>
           <br>
           <br>
