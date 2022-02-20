@@ -10,7 +10,6 @@ class MusicsController < ApplicationController
     @user = current_user
     #ランキング機能music_idをもってきて、favoritecountを表示
     @all_ranks = Music.find(Favorite.group(:music_id).order('count(music_id) desc').limit(3).pluck(:music_id))
-    #random機能RANDOMにmusicをもってくる
   end
 
   def new
