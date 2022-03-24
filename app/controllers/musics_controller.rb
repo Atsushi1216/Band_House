@@ -8,7 +8,7 @@ class MusicsController < ApplicationController
   def index
     @musics = Music.page(params[:page]).reverse_order
     @user = current_user
-    #ランキング機能music_idをもってきて、favoritecountを表示
+    #ランキング機能music_idをもってきて、favoritecountを表示。表示数を3件
     @all_ranks = Music.find(Favorite.group(:music_id).order('count(music_id) desc').limit(3).pluck(:music_id))
   end
 
@@ -18,6 +18,7 @@ class MusicsController < ApplicationController
 
   def create
     @music = Music.new(music_params)
+    # current_userをuserに紐づいているmusicと結びつける
     @music.user_id = current_user.id
     if @music.save
       redirect_to musics_path, notice: '投稿しました。'
