@@ -30,16 +30,19 @@ class UsersController < ApplicationController
 
   def favorites
     @user = User.find(params["user_id"])
+    # userがいいねした楽曲
     favorites = Favorite.where(user_id: @user.id).pluck(:music_id)
     @favorite_musics = Music.find(favorites)
   end
 
   def follows
+    # フォロー一覧ページ
     user = User.find(params[:id])
     @users = user.following_user.page(params[:page]).per(3).reverse_order
   end
 
   def followers
+    # フォロワー一覧ページ
     user = User.find(params[:id])
     @users = user.follower_user.page(params[:page]).per(3).reverse_order
   end
