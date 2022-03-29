@@ -30,7 +30,7 @@ class UsersController < ApplicationController
 
   def favorites
     @user = User.find(params["user_id"])
-    # userがいいねした楽曲
+    # userがいいねした楽曲をfavoriteと
     favorites = Favorite.where(user_id: @user.id).pluck(:music_id)
     @favorite_musics = Music.find(favorites)
   end
