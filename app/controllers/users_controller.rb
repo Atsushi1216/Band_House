@@ -21,8 +21,9 @@ class UsersController < ApplicationController
 
   def music
     @user = User.find(params["user_id"])
+    # userが投稿した曲の表示
     @musics = @user.musics.page(params[:page]).reverse_order
-    # id以外の値を取得するためwhereを使用
+    # id以外の値を取得するためwhereを使用　フォローしている人の楽曲をマイページのタイムラインに表示
     @feeds = Music.where(user_id: [current_user.id, *current_user.following_user_ids]).order(created_at: :desc)
     @following_users = @user.following_user
     @follower_users = @user.follower_user
@@ -30,7 +31,7 @@ class UsersController < ApplicationController
 
   def favorites
     @user = User.find(params["user_id"])
-    # userがいいねした楽曲をfavoriteと
+    # userがいいねした楽曲をfavoriteと定義
     favorites = Favorite.where(user_id: @user.id).pluck(:music_id)
     @favorite_musics = Music.find(favorites)
   end
