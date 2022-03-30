@@ -92,7 +92,7 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
-  #本番環境でのお問い合わせ機能についての記述
+  #本番環境でのお問い合わせ機能についての記述（この記述がないと実装できないため注意）
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
       port: 587,
