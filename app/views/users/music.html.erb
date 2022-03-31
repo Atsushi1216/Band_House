@@ -12,6 +12,7 @@
               <% end %><br>
               <p>曲名：<%= link_to music.title,  music_path(music.id) %></p>
               <p><%= music.caption %></p></br>
+              <!--carrierwave audioの再生プレイヤーの表示-->
               <p class="mx-auto"><audio src= "<%= "#{music.song}" %>" controls=""></audio></p>
               <p class="mx-auto">自己評価</p>
               <p class="text-center">
