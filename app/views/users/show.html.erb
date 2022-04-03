@@ -41,14 +41,14 @@
 
 <% if @user == current_user %>
 <div class="container" >
- <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 show-timeline " >
-    <div class="mainContents col-sm-12 col-md-12  " >
+ <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 show-timeline" >
+    <div class="mainContents col-sm-12 col-md-12" >
        <h3 class="subtitle pb-4 user-show-text">タイムライン（フォローしている人の楽曲）</h3>
       <hr>
       <div class="row bg-light" >
         <% @feeds.each do |music| %>
         <div class="col-md-4 pb-4">
-         <div class="card shadow-sm " style="width: 100%; height: 38rem;"  >
+         <div class="card shadow-sm" style="width: 100%; height: 38rem;"  >
           <div class="mx-auto">
             <%= link_to music_path(music.id) do %>
               <%= attachment_image_tag(music, :song_image, fallback: "no_image.jpg" , class: "jacket-image") %>
