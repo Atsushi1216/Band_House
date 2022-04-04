@@ -2,6 +2,7 @@
   <h2><%= flash[:notice]  %></h2>
 </div>
 <div class="show-name">
+  <!--currentuserのみ表示-->
     <% if @user == current_user %>
   <h3>ようこそ<%= @user.name %>さん！</h3>
     <% end %></br>
