@@ -13,6 +13,7 @@ class MusicsController < ApplicationController
   end
 
   def new
+    # Musicの新規投稿について定義
     @music = Music.new
   end
 
