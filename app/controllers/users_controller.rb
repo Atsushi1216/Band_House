@@ -3,6 +3,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @musics = @user.musics.page(params[:page]).reverse_order
+    # id以外の値を取得するためwhereを使用　フォローしている人の楽曲をマイページのタイムラインに表示
     @feeds = Music.where(user_id: [current_user.id, *current_user.following_user_ids]).order(created_at: :desc)
   end
 
